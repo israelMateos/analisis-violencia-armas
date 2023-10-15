@@ -1,3 +1,11 @@
+"""Functions to download the datasets used in the project.
+
+The datasets are downloaded from the following sources:
+- Gun violence data: https://www.kaggle.com/jameslko/gun-violence-data
+- Poverty data: https://www.povertyusa.org/data
+- Firearm laws data: https://statefirearmlaws.org/
+"""
+
 import bs4
 import pandas as pd
 import requests
@@ -6,19 +14,25 @@ from selenium import webdriver
 
 load_dotenv(find_dotenv())
 
-import kaggle
+import kaggle  # pylint: disable=wrong-import-position
 
 
-def get_gun_violence_data():
+def get_gun_violence_data() -> None:
+    """Download the gun violence data from Kaggle."""
     kaggle.api.authenticate()
     kaggle.api.dataset_download_files(
         "jameslko/gun-violence-data", path="data/raw", unzip=True
     )
 
 
-def get_us_states_codes():
+def get_us_states_codes() -> dict:
+    """Get the ISO 3166-2 codes for the US states and districts.
+
+    Returns:
+        dict: US states and districts as keys and their codes as values.
+    """
     url = "https://en.wikipedia.org/wiki/ISO_3166-2:US"
-    response = requests.get(url)
+    response = requests.get(url, timeout=5)
     soup = bs4.BeautifulSoup(response.text, "html.parser")
     table = soup.find("table")
     table_body = table.find("tbody")
@@ -31,7 +45,7 @@ def get_us_states_codes():
         cells = row.find_all("td")
         subcategory = cells[2].text.replace("\n", "")
         # If the row is not a state or a district, skip it
-        if subcategory != "State" and subcategory != "District":
+        if subcategory not in ("State", "District"):
             continue
         state_code = cells[0].find("span").text[-2:]
         state_name = cells[1].find("a").text
@@ -40,7 +54,8 @@ def get_us_states_codes():
     return states
 
 
-def get_poverty_data():
+def get_poverty_data() -> None:
+    """Download the poverty data from povertyusa.org."""
     site = "https://www.povertyusa.org/data"
     states = get_us_states_codes()
     years = ["2015", "2016", "2017", "2018"]
@@ -59,8 +74,7 @@ def get_poverty_data():
             url = site + f"/{year}/{state_code}"
             driver.get(url)
             # Once the page is loaded, we can use BeautifulSoup to parse the HTML
-            page_source = driver.page_source
-            soup = bs4.BeautifulSoup(page_source, "html.parser")
+            soup = bs4.BeautifulSoup(driver.page_source, "html.parser")
 
             row = [int(year), state_name]
             # Population
@@ -92,8 +106,7 @@ def get_poverty_data():
             )
             # Median household income, deep poverty rate, median rent, unemployment rate,
             # without health insurance and supplemental poverty measure
-            stats = soup.find_all("h2", {"class": "stat h1 font-weight--light"})
-            for stat in stats:
+            for stat in soup.find_all("h2", {"class": "stat h1 font-weight--light"}):
                 # There are both ints and percentages
                 stat = stat.find("span")["data-value"]
                 row.append(float(stat) if "." in stat else int(stat))
@@ -121,7 +134,8 @@ def get_poverty_data():
     df.to_csv("data/raw/poverty_data.csv", index=False)
 
 
-def get_firearm_laws_data():
+def get_firearm_laws_data() -> None:
+    """Download the firearm laws data from statefirearmlaws.org."""
     database_url = (
         "https://mail.statefirearmlaws.org/sites/default/files/2020-07/DATABASE_0.xlsx"
     )
@@ -130,17 +144,18 @@ def get_firearm_laws_data():
     )
 
     # Download the database
-    database = requests.get(database_url)
+    database = requests.get(database_url, timeout=5)
     with open("data/raw/firearm_laws_database.xlsx", "wb") as f:
         f.write(database.content)
 
     # Download the codebook
-    codebook = requests.get(codebook_url)
+    codebook = requests.get(codebook_url, timeout=5)
     with open("data/raw/firearm_laws_codebook.xlsx", "wb") as f:
         f.write(codebook.content)
 
 
-def get_datasets():
+def get_datasets() -> None:
+    """Download all the datasets to the data/raw directory."""
     get_gun_violence_data()
     get_poverty_data()
     get_firearm_laws_data()
