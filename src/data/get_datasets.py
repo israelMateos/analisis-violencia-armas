@@ -121,6 +121,26 @@ def get_poverty_data():
     df.to_csv("data/raw/poverty_data.csv", index=False)
 
 
+def get_firearm_laws_data():
+    database_url = (
+        "https://mail.statefirearmlaws.org/sites/default/files/2020-07/DATABASE_0.xlsx"
+    )
+    codebook_url = (
+        "https://mail.statefirearmlaws.org/sites/default/files/2020-07/codebook_0.xlsx"
+    )
+
+    # Download the database
+    database = requests.get(database_url)
+    with open("data/raw/firearm_laws_database.xlsx", "wb") as f:
+        f.write(database.content)
+
+    # Download the codebook
+    codebook = requests.get(codebook_url)
+    with open("data/raw/firearm_laws_codebook.xlsx", "wb") as f:
+        f.write(codebook.content)
+
+
 def get_datasets():
     get_gun_violence_data()
     get_poverty_data()
+    get_firearm_laws_data()
