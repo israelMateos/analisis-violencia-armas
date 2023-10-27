@@ -1,0 +1,325 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+%\usepackage{gentium}
+\usepackage{mathptmx} % Use Times Font
+
+
+\usepackage[pdftex]{graphicx} % Required for including pictures
+\usepackage[spanish]{babel} % Spanish translations
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+
+\usepackage{float}
+\usepackage{adjustbox}
+
+\usepackage{xurl}
+
+\usepackage{amsmath}
+\usepackage{yhmath}
+
+%-----------------------
+% Set pdf information and add title, fill in the fields
+%-----------------------
+\hypersetup{ 	
+pdfsubject = {},
+pdftitle = {},
+pdfauthor = {}
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+\begin{document} %All text i dokumentet hamnar mellan dessa taggar, allt ovanför är formatering av dokumentet
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	
+	\center % Centre everything on the page
+	
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+	
+	\textsc{\LARGE Universidad de Castilla-La Mancha}\\[1.5cm] % Main heading such as the name of your university/college
+	
+	\textsc{\Large Minería de Datos}\\[0.5cm] % Major heading such as course name
+	
+	\textsc{\large Entregable 1: Definición del Problema}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\HRule\\[0.4cm]
+	
+	{\huge\bfseries Análisis de violencia con armas en EE. UU.}\\[0.4cm] % Title of your document
+	
+	\HRule\\[1.5cm]
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+            \textsc{Darío Andrés Fallavollita Figueroa}
+		\end{flushleft}
+        \begin{flushleft}
+            \textsc{Fernando Potenciano Santiago}
+        \end{flushleft}
+		\begin{flushleft}
+		  \textsc{Ignacio Rozas López}
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+            \textsc{Israel Mateos Aparicio Ruiz Santa Quiteria}
+		\end{flushright}
+        \begin{flushright}
+            \textsc{Adrían Julián Ramos Romero}
+        \end{flushright}
+		\begin{flushright}
+		  \textsc{Laurentiu Gheorghe Zlatar}
+		\end{flushright}
+	\end{minipage}
+	
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+	%\vfill\vfill
+	%\includegraphics[width=0.2\textwidth]{placeholder.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+
+\tableofcontents
+
+\newpage
+
+\section{Introducción y porcentajes de participación}
+
+El presente documento tiene como fin definir el problema que abordará el proyecto. Este es el análisis de los incidentes violentos con armas en EE. UU.
+
+El reparto de la participación entre integrantes ha sido equitativo, y se muestra en la tabla \ref{tab:participacion}.
+
+\begin{table}[H]
+    \centering
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Apellidos y nombre}                & \textbf{Correo}                      & \textbf{Participación} \\ \hline
+Fallavollita Figueroa, Darío Andrés         & DarioAndres.Fallavollita@alu.uclm.es & 16,6\%                 \\ \hline
+Mateos Aparicio Ruiz Santa Quiteria, Israel & Israel.Mateos@alu.uclm.es            & 16,6\%                 \\ \hline
+Potenciano Santiago, Fernando               & Fernando.Potenciano@alu.uclm.es      & 16,6\%                 \\ \hline
+Ramos Romero, Adrián Julián                 & AdrianJulian.Ramos@alu.uclm.es       & 16,6\%                 \\ \hline
+Rozas López, Ignacio                        & Ignacio.Rozas@alu.uclm.es            & 16,6\%                 \\ \hline
+Zlatar, Laurentiu Gheorghe                  & LaurentiuGheorghe.Zlatar@alu.uclm.es & 16,6\%                 \\ \hline
+\end{tabular}
+}
+    \caption{Porcentaje de participación de los integrantes}
+    \label{tab:participacion}
+\end{table}
+
+\section{Descripción breve de los datos originales}
+
+Los datos originales que se usarán provienen de tres fuentes, dando lugar a 4 conjuntos de datos: uno con incidentes violentos con armas, otro con datos de pobreza y otros dos con datos acerca de leyes sobre armas de fuego. Estos conjuntos de datos se han obtenido mediante el uso de técnicas de \textit{web scraping}, incluyendo sus fuentes en estos documentos.
+
+A continuación se presentan los diccionarios de datos para cada uno de ellos a modo de descripción.
+
+\subsection*{Incidentes violentos con armas en EE. UU.}
+
+El conjunto de datos principal trata sobre incidentes violentos con armas en EE. UU., obtenido de \url{https://www.kaggle.com/datasets/jameslko/gun-violence-data}. Se muestra en la tabla \ref{tab:dict_datos_incidentes}.
+
+\begin{table}[H]
+    \centering
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Columna}               & \textbf{Tipo de dato} & \textbf{Descripción}                                                                                                             \\ \hline
+incident\_id                   & int                   & Identificador del incidente                                                                                                      \\ \hline
+date                           & date                  & Fecha en la que se produjo el crimen                                                                                             \\ \hline
+state                          & String                & Estado en el que se produjo el crimen                                                                                            \\ \hline
+city\_or\_county               & String                & Ciudad/condado del crimen                                                                                                        \\ \hline
+address                        & String                & Dirección del lugar del crimen                                                                                                   \\ \hline
+n\_killed                      & int                   & Número de personas fallecidas                                                                                                    \\ \hline
+n\_injured                     & int                   & Número de personas heridas                                                                                                       \\ \hline
+incident\_url                  & url                   & URL acerca del incidente                                                                                                         \\ \hline
+source\_url                    & String                & Referencia a la fuente del informe                                                                                               \\ \hline
+incident\_url\_fields\_missing & boolean               & \begin{tabular}[c]{@{}c@{}}Validación del URL: verdadero si incident\_url\\ está presente, falso en caso contrario\end{tabular}  \\ \hline
+congressional\_district        & int                   & Identificador del distrito electoral                                                                                             \\ \hline
+gun\_stolen                    & String                & Estado de las armas involucradas en el crimen.                                                                                   \\ \hline
+gun\_type                      & String                & Tipificación de las armas utilizadas en el crimen                                                                                \\ \hline
+incident\_characteristics      & String                & Características del incidente                                                                                                    \\ \hline
+latitude                       & float                 & Distancia de latitud                                                                                                             \\ \hline
+location\_description          & String                & Localización concreta del incidente                                                                                              \\ \hline
+longitude                      & float                 & Distancia de longitud                                                                                                            \\ \hline
+n\_guns\_involved              & int                   & Número de armas involucradas en el incidente                                                                                     \\ \hline
+notes                          & int                   & Información adicional del crimen                                                                                                 \\ \hline
+participant\_age               & String                & Edad exacta de los participantes en el momento del crimen                                                                        \\ \hline
+participant\_age\_group        & String                & Grupo de edad de los participantes en el momento del crimen                                                                      \\ \hline
+participant\_gender            & String                & Género de los participantes                                                                                                      \\ \hline
+participant\_name              & String                & Nombre de los participantes involucrados en el crimen                                                                            \\ \hline
+participant\_relationship      & String                & Relación del participante con otros participantes                                                                                \\ \hline
+participant\_status            & String                & Grado de daño hecho al participante                                                                                              \\ \hline
+participant\_type              & String                & Papel del involucrado en el crimen                                                                                               \\ \hline
+sources                        & url                   & Fuente de los participantes                                                                                                      \\ \hline
+state\_house\_district         & int                   & \begin{tabular}[c]{@{}c@{}}Distrito electoral de la cámara de representantes\\ para la elección de un representante\end{tabular} \\ \hline
+state\_senate\_district        & int                   & \begin{tabular}[c]{@{}c@{}}Distrito electoral para elección de un senador\\ estatal en una legislatura\end{tabular}              \\ \hline
+\end{tabular}
+}
+    \caption{Diccionario de datos del conjunto de datos de incidentes violentos con armas en EE. UU.}
+    \label{tab:dict_datos_incidentes}
+\end{table}
+
+\subsection*{Datos de pobreza en EE. UU.}
+
+El conjunto de datos que trata acerca de datos de pobreza en EE. UU. se ha obtenido de \url{https://www.povertyusa.org/data}. Se muestra en la tabla \ref{tab:dict_datos_pobreza}.
+
+\begin{table}[H]
+    \centering
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Columna}               & \textbf{Tipo de dato} & \textbf{Descripción}                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+year                           & int                   & El año al que corresponde la información en el registro                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
+state                          & String                & El estado de Estados Unidos al que se refiere el registro                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
+population                     & int                   & La población total en el estado y año especificados                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+in\_poverty                    & int                   & \begin{tabular}[c]{@{}c@{}}El número de personas que se encuentran en situación de pobreza\\      (ganan menos que el umbral de pobreza oficial del gobierno, que\\      para una familia de cuatro miembros es de unos 25,700 dólares)\end{tabular}                                                                                                                                                                                                  \\ \hline
+poverty\_rate                  & float                 & \begin{tabular}[c]{@{}c@{}}La tasa de pobreza, expresada como un porcentaje, que representa la\\      proporción de la población que se encuentra en situación de pobreza\end{tabular}                                                                                                                                                                                                                                                                \\ \hline
+median\_household\_income      & float                 & \begin{tabular}[c]{@{}c@{}}La mediana de los ingresos de los hogares. Incluye los ingresos del\\      cabeza de familia y de todas las demás personas de 15 años o más\\      del hogar, estén o no emparentadas con el cabeza de familia\end{tabular}                                                                                                                                                                                                \\ \hline
+deep\_poverty\_rate            & float                 & \begin{tabular}[c]{@{}c@{}}Porcentaje de personas que viven en un hogar con unos ingresos\\      totales en efectivo inferiores al 50\% del umbral de pobreza\\      establecido por la Oficina del Censo de Estados Unidos\end{tabular}                                                                                                                                                                                                              \\ \hline
+median\_rent                   & float                 & \begin{tabular}[c]{@{}c@{}}La mediana de los costos del alquiler y los servicios\\      de una vivienda de dos dormitorios\end{tabular}                                                                                                                                                                                                                                                                                                               \\ \hline
+unemployment\_rate             & float                 & \begin{tabular}[c]{@{}c@{}}Porcentaje de trabajadores desempleados que han buscado trabajo\\      activamente y están actualmente disponibles para trabajar\end{tabular}                                                                                                                                                                                                                                                                              \\ \hline
+without\_health\_insurance     & float                 & \begin{tabular}[c]{@{}c@{}}Porcentaje de personas menores de 65 años y por debajo\\      del 138\% del umbral de pobreza que no tenían seguro\\      médico en ningún momento del año\end{tabular}                                                                                                                                                                                                                                                    \\ \hline
+supplemental\_poverty\_measure & float                 & \begin{tabular}[c]{@{}c@{}}La Medida de Pobreza Suplementaria (SPM) tiene en cuenta a\\      las personas que caerían en la pobreza sin ciertas prestaciones\\      no monetarias que les ayudan a superar el umbral de pobreza.\\      Estas prestaciones incluyen la ayuda alimentaria y los subsidios\\      de alquiler, así como las ayudas basadas en los impuestos,\\      como el crédito fiscal por ingresos del trabajo (EITC)\end{tabular} \\ \hline
+\end{tabular}
+}
+    \caption{Diccionario de datos del conjunto de datos de pobreza en EE. UU.}
+    \label{tab:dict_datos_pobreza}
+\end{table}
+
+\subsection*{Leyes para armas de fuego en EE. UU.}
+
+Los conjuntos de datos que tratan acerca de datos de leyes sobre armas de fuego en EE. UU. se han obtenido de \url{https://mail.statefirearmlaws.org/resources}.
+
+En realidad, se trata de un único conjunto de datos, mostrado en la tabla \ref{tab:dict_datos_leyes_ds}, mientras que el mostrado en la tabla \ref{tab:dict_datos_leyes_cb} se trata de un \textit{codebook} acerca del primero. Sin embargo, este último contiene una categorización de las leyes, que nos puede ser útil para analizar la importancia de cada una de estas categorías por separado. Por tanto, se incluyen ambos. 
+
+\begin{table}[H]
+    \centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Columna}           & \textbf{Tipo de dato} & \textbf{Descripción}                                                                                       \\ \hline
+state                      & String                & \begin{tabular}[c]{@{}c@{}}Estado de EE. UU. al que corresponde\\ la información del registro\end{tabular} \\ \hline
+year                       & int                   & \begin{tabular}[c]{@{}c@{}}Año al que corresponde la\\ información del registro\end{tabular}               \\ \hline
+felony, invcommitment, ... & boolean               & Ley concreta que puede o no estar vigente                                                                  \\ \hline
+lawtotal                   & int                   & Cantidad total de leyes vigentes                                                                           \\ \hline
+\end{tabular}
+    \caption{Diccionario de datos del conjunto de datos de leyes para armas de fuego en EE. UU.}
+    \label{tab:dict_datos_leyes_ds}
+\end{table}
+
+\begin{table}[H]
+    \centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Columna}                  & \textbf{Tipo de dato} & \textbf{Descripción}                                                                                                                                           \\ \hline
+Category Code                     & int                   & Identificador de categoría de leyes                                                                                                                            \\ \hline
+Category                          & String                & Categoría de la ley                                                                                                                                            \\ \hline
+Sub-Category                      & String                & Subcategoría de la ley                                                                                                                                         \\ \hline
+Variable Name                     & String                & \begin{tabular}[c]{@{}c@{}}Nombre de la ley en el anterior\\ conjunto de datos. Corresponden a las\\ definidas anteriormente: felony, danger, ...\end{tabular} \\ \hline
+Brief Description of Provision    & String                & Descripción breve de la ley                                                                                                                                    \\ \hline
+Detailed Description of Provision & String                & Descripción detallada de la ley                                                                                                                                \\ \hline
+Coding Notes                      & String                & \begin{tabular}[c]{@{}c@{}}Notas adicionales para asignar un valor\\ (vigente o no vigente) a cada ley\end{tabular}                                            \\ \hline
+Coding Instructions               & String                & \begin{tabular}[c]{@{}c@{}}Instrucciones de qué valor asignar\\ (vigente o no vigente) a cada ley\end{tabular}                                                 \\ \hline
+Notes                             & String                & Notas adicionales                                                                                                                                              \\ \hline
+Data Source and Attribution       & String                & Fuente de todos los datos y autores                                                                                                                            \\ \hline
+\end{tabular}
+    \caption{Diccionario de datos del \textit{codebook} del conjunto de datos de leyes para armas de fuego en EE. UU.}
+    \label{tab:dict_datos_leyes_cb}
+\end{table}
+
+\section{Antecedentes o trabajos similares}
+
+Uno de los estudios más elaborados que hemos podido encontrar es el estudio elaborado por Amnistía Internacional, donde denuncian que más de 600 personas mueren al día por consecuencia de la violencia con armas de fuego y su fácil acceso. 
+
+En el artículo que subieron a su página web (\url{https://www.amnesty.org/es/what-we-do/arms-control/gun-violence/}) también llegan a conclusiones como que las personas racializadas son uno de los grupos que, de forma desproporcionada, más sufren los efectos de la violencia con armas, así como las personas de comunidades desfavorecidas y mujeres en situación de violencia de genero intrafamiliar. 
+
+Según los datos que Amnistía Internacional ha analizado, la gran mayoría de la violencia con armas de fuego ocurre fuera de los entornos de conflicto armado y un porcentaje importante de las muertes por arma de fuego (llegando has más de la mitad en algunos estados de Estados Unidos) son suicidios o accidentes. De todos los homicidios cometidos en el mundo, el 71\% son consecuencia de las armas de fuego, siendo el perfil de la víctima y a la vez agresor jóvenes barones. La mujer, en concreto dentro de una pareja, es especialmente vulnerable cuando la pareja tiene fácil acceso a armas. 
+
+De todas las armas que hay en circulación, el 85\% las tienen particulares, el 13\% militares y un 2\% son para cuerpos policiales. 
+
+La violencia con armas de fuego está concentrada en barrios urbanos, pobres, con alta delincuencia y con presencia de narcotráfico 
+
+Una relación interesante a la que llegan es el vínculo entre la discriminación y la violencia con armas de fuego. Según los datos del 2020 el 60,9\% de las víctimas mortales por arma de fuego en estados unidos eran afroamericanos, siendo estos tan solo el 13\% de la población  Dicha discriminación se hace evidente en los jóvenes varones negros de entre 15 y 34 años, que tienen hasta 10 veces más probabilidades de morir por armas de fuego que su contraparte blanca. 
+
+Otro grupo preocupante son los infantes, que en estados unidos las armas de fuego es la primera causa de muerte infantil y entre un 2 y el 7\% de todas las heridas tratadas 
+
+Estados Unidos es un caso particular por tener cifras significativamente más altas que otros países industrializados  No tienen registro nacional de armas y se puede portar armas en público y solo tres estados y el Distrito de Columbia prohíben portar armas a la vista en público. Lidera en número de tiroteos masivos al año y la cifra no para de aumentar año tras año 
+
+Para terminar, se proponen algunas medidas para restringir el acceso a las armas de fuego argumentado que la gran mayoría de países del mundo tienen fuertes regulaciones al respecto y que los países con los controles más estrictos tienen una violencia con armas de fuego bastante baja como son Japón, Corea del Sur y Singapur.  Un caso de éxito que tomaron estas medidas fue Australia, donde es consiguió que las muertes por armas de fuego se redujeran a más de la mitad entre 1996 y 2019. 
+
+\section{Planteamiento de la hipótesis y de los objetivos a perseguir}
+
+El principal objetivo del proyecto es el de analizar y comprender los patrones asociados a los incidentes violentos con armas en EE. UU. Para ello, pretendemos explorar las posibles relaciones entre la violencia armada y factores socioeconómicos en los estados de EE. UU (en concreto, con la pobreza), así como la influencia de la época en la que tienen lugar los incidentes.
+
+Además, un componente esencial del análisis será el de relacionar estos incidentes con el ámbito jurídico, con el fin de determinar el impacto de las leyes de control de armas.
+
+Nuestro objetivo final será el de presentar los resultados, sacar conclusiones y ofrecer recomendaciones para abordar la problemática de la violencia con armas en EE. UU.
+
+Para concretar más estos objetivos, se ha planteado cuatro hipótesis:
+
+\begin{enumerate}
+    \item Se producen más incidentes con armas los fines de semana.
+    \item Se producen más incidentes con armas en los meses de verano.
+    \item Los incidentes con armas son más frecuentes en los estados con mayor pobreza.
+    \item Cuantas más leyes sobre el uso de armas existen en un estado, menos incidentes con armas se producen en él. 
+\end{enumerate}
+
+\section{Posibilidades de enriquecimiento de los datos}
+
+Dado que ya se han expuesto y descrito todos los datos que se usarán, en este apartado diferenciaremos los conjuntos de datos en principales o secundarios, y por las hipótesis en las que se utilizarán.
+
+\begin{itemize}
+    \item \textbf{Incidentes violentos con armas en EE. UU.} Es el conjunto de datos principal, por lo que se utilizará para comprobar todas las hipótesis.
+    \item \textbf{Datos de pobreza de EE. UU.} Conjunto de datos secundario. Se utilizará en conjunto con el principal para comprobar la tercera hipótesis (\textit{los incidentes con armas son más frecuentes en los estados con mayor pobreza}).
+    \item \textbf{Leyes para armas de fuego en EE. UU.} Conjunto de datos secundario. Se utilizará en conjunto con el principal para comprobar la cuarta hipótesis (\textit{cuantas más leyes sobre el uso de armas existen en un estado, menos incidentes con armas se producen en él}).
+\end{itemize}
+
+\end{document}
