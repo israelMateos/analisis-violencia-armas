@@ -6,6 +6,8 @@ The datasets are downloaded from the following sources:
 - Firearm laws data: https://statefirearmlaws.org/
 """
 
+from collections import defaultdict
+
 import bs4
 import pandas as pd
 import requests
@@ -68,7 +70,7 @@ def get_poverty_data() -> None:
 
     driver = webdriver.Chrome(options=options)
 
-    data = []
+    data = defaultdict(list)
     for year in years:
         for state_name, state_code in states.items():
             url = site + f"/{year}/{state_code}"
@@ -76,9 +78,10 @@ def get_poverty_data() -> None:
             # Once the page is loaded, we can use BeautifulSoup to parse the HTML
             soup = bs4.BeautifulSoup(driver.page_source, "html.parser")
 
-            row = [int(year), state_name]
+            data["year"].append(int(year))
+            data["state"].append(state_name)
             # Population
-            row.append(
+            data["population"].append(
                 int(
                     soup.find("div", {"class": "simple-stat population stat"})
                     .find("span", {"class": "stat"})
@@ -86,7 +89,7 @@ def get_poverty_data() -> None:
                 )
             )
             # Population in poverty
-            row.append(
+            data["in_poverty"].append(
                 int(
                     soup.find("div", {"class": "simple-stat in-poverty stat"})
                     .find("span", {"class": "stat"})
@@ -97,7 +100,7 @@ def get_poverty_data() -> None:
             poverty_rate_section = soup.find(
                 "div", {"class": "simple-stat poverty-rate stat"}
             )
-            row.append(
+            data["poverty_rate"].append(
                 None  # Some states and years don't have data for this
                 if poverty_rate_section is None
                 else poverty_rate_section.find("span", {"class": "stat"}).find("span")[
@@ -107,49 +110,32 @@ def get_poverty_data() -> None:
             # Median household income, deep poverty rate, median rent, unemployment rate,
             # without health insurance and supplemental poverty measure
 
-            # <stat name>: [<index in the row>, <value>]
-            # If the value is None, it means that the stat is not available for that state and year
+            # Some states and years don't have data for these, so we initialize them to None
             stats = {
-                "median-household-income": [5, None],
-                "deep-poverty-rate": [6, None],
-                "median-rent": [7, None],
-                "unemployment-rate": [8, None],
-                "without-health-insurance": [9, None],
-                "supplemental-poverty-measure": [10, None],
+                "median_household_income": None,
+                "deep_poverty_rate": None,
+                "median_rent": None,
+                "unemployment_rate": None,
+                "without_health_insurance": None,
+                "supplemental_poverty_measure": None,
             }
             for stat_card in soup.find_all(
                 "div", {"class": "stat-card bg-color--gray"}
             ):
-                stat_name = stat_card.find("h4").text.replace(" ", "-").lower()
+                stat_name = stat_card.find("h4").text.replace(" ", "_").lower()
                 stat_value = stat_card.find(
                     "h2", {"class": "stat h1 font-weight--light"}
                 ).find("span")["data-value"]
-                stats[stat_name][1] = (
+                stats[stat_name] = (
                     float(stat_value) if "." in stat_value else int(stat_value)
                 )
 
-            for stat in stats.values():
-                row.insert(stat[0], stat[1])
-            data.append(row)
+            for stat_name, stat_value in stats.items():
+                data[stat_name].append(stat_value)
 
     driver.quit()
 
-    df = pd.DataFrame(
-        data,
-        columns=[
-            "year",
-            "state",
-            "population",
-            "in_poverty",
-            "poverty_rate",
-            "median_household_income",
-            "deep_poverty_rate",
-            "median_rent",
-            "unemployment_rate",
-            "without_health_insurance",
-            "supplemental_poverty_measure",
-        ],
-    )
+    df = pd.DataFrame.from_dict(data)
     df.to_csv("data/raw/poverty_data.csv", index=False)
 
 
