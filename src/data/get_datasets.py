@@ -106,11 +106,30 @@ def get_poverty_data() -> None:
             )
             # Median household income, deep poverty rate, median rent, unemployment rate,
             # without health insurance and supplemental poverty measure
-            for stat in soup.find_all("h2", {"class": "stat h1 font-weight--light"}):
-                # There are both ints and percentages
-                stat = stat.find("span")["data-value"]
-                row.append(float(stat) if "." in stat else int(stat))
 
+            # <stat name>: [<index in the row>, <value>]
+            # If the value is None, it means that the stat is not available for that state and year
+            stats = {
+                "median-household-income": [5, None],
+                "deep-poverty-rate": [6, None],
+                "median-rent": [7, None],
+                "unemployment-rate": [8, None],
+                "without-health-insurance": [9, None],
+                "supplemental-poverty-measure": [10, None],
+            }
+            for stat_card in soup.find_all(
+                "div", {"class": "stat-card bg-color--gray"}
+            ):
+                stat_name = stat_card.find("h4").text.replace(" ", "-").lower()
+                stat_value = stat_card.find(
+                    "h2", {"class": "stat h1 font-weight--light"}
+                ).find("span")["data-value"]
+                stats[stat_name][1] = (
+                    float(stat_value) if "." in stat_value else int(stat_value)
+                )
+
+            for stat in stats.values():
+                row.insert(stat[0], stat[1])
             data.append(row)
 
     driver.quit()
