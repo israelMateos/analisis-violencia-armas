@@ -164,3 +164,6 @@ def get_datasets() -> None:
     get_gun_violence_data()
     get_poverty_data()
     get_firearm_laws_data()
+
+if __name__ == "__main__":
+    get_datasets()
