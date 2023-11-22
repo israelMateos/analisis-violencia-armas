@@ -3,15 +3,21 @@ import os
 
 import pandas as pd
 from sqlalchemy import create_engine, text
+from sqlalchemy.engine import Engine
 from sqlalchemy.engine.url import URL
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session, sessionmaker
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
 
-def create_raw_schema(session):
+def create_raw_schema(session: Session) -> None:
+    """Create the 'raw' schema in the database if it does not exist.
+
+    Args:
+        session (sqlalchemy.orm.Session): Database session.
+    """
     logging.info("Creating the raw schema...")
     try:
         session.execute(text("CREATE SCHEMA IF NOT EXISTS raw"))
@@ -21,7 +27,13 @@ def create_raw_schema(session):
         logging.error("Error creating schema: %s", str(e))
 
 
-def load_data_into_database(engine, data_directory):
+def load_data_into_database(engine: Engine, data_directory: str) -> None:
+    """Load data from CSV or Excel files in a specified directory into the database.
+
+    Args:
+        engine (sqlalchemy.engine.Engine): Database engine.
+        data_directory (str): Path to the directory containing data files.
+    """
     files = [f for f in os.listdir(data_directory) if f.endswith((".csv", ".xlsx"))]
 
     for file in files:
@@ -38,7 +50,8 @@ def load_data_into_database(engine, data_directory):
         logging.info("%s loaded into the database.", file_path)
 
 
-def main():
+def main() -> None:
+    """Main function to load data into the database."""
     logging.info("Loading data into the database...")
     postgres_host = os.environ.get("POSTGRES_HOST")
     postgres_port = os.environ.get("POSTGRES_PORT")
