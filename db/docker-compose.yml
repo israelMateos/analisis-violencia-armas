@@ -16,6 +16,21 @@ services:
       interval: 1s
       timeout: 10s
       retries: 10
+
+  data_loader:
+    container_name: data_loader
+    build:
+      context: ..
+      dockerfile: ./db/data_loader.Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_DB: guns_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
     
   pgadmin:
     image: dpage/pgadmin4
