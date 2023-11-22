@@ -6,7 +6,9 @@ The datasets are downloaded from the following sources:
 - Firearm laws data: https://statefirearmlaws.org/
 """
 
+import logging
 from collections import defaultdict
+from datetime import datetime
 
 import bs4
 import pandas as pd
@@ -18,13 +20,29 @@ load_dotenv(find_dotenv())
 
 import kaggle  # pylint: disable=wrong-import-position
 
+# Generate a unique timestamp for the log file name
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+log_filename = f"download_datasets_{timestamp}.log"
+
+# Configure logging to write to both console and the uniquely named log file
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler(log_filename),
+        logging.StreamHandler(),
+    ],
+)
+
 
 def get_gun_violence_data() -> None:
     """Download the gun violence data from Kaggle."""
+    logging.info("Downloading the gun violence data...")
     kaggle.api.authenticate()
     kaggle.api.dataset_download_files(
         "jameslko/gun-violence-data", path="data/raw", unzip=True
     )
+    logging.info("Gun violence data downloaded successfully.")
 
 
 def get_us_states_codes() -> dict:
@@ -58,6 +76,7 @@ def get_us_states_codes() -> dict:
 
 def get_poverty_data() -> None:
     """Download the poverty data from povertyusa.org."""
+    logging.info("Downloading the poverty data...")
     site = "https://www.povertyusa.org/data"
     states = get_us_states_codes()
     years = ["2015", "2016", "2017", "2018"]
@@ -137,10 +156,12 @@ def get_poverty_data() -> None:
 
     df = pd.DataFrame.from_dict(data)
     df.to_csv("data/raw/poverty_data.csv", index=False)
+    logging.info("Poverty data downloaded successfully.")
 
 
 def get_firearm_laws_data() -> None:
     """Download the firearm laws data from statefirearmlaws.org."""
+    logging.info("Downloading the firearm laws data...")
     database_url = (
         "https://mail.statefirearmlaws.org/sites/default/files/2020-07/DATABASE_0.xlsx"
     )
@@ -157,13 +178,26 @@ def get_firearm_laws_data() -> None:
     codebook = requests.get(codebook_url, timeout=5)
     with open("data/raw/firearm_laws_codebook.xlsx", "wb") as f:
         f.write(codebook.content)
+    logging.info("Firearm laws data downloaded successfully.")
 
 
 def get_datasets() -> None:
     """Download all the datasets to the data/raw directory."""
-    get_gun_violence_data()
-    get_poverty_data()
-    get_firearm_laws_data()
+    logging.info("Downloading the datasets...")
+    try:
+        get_gun_violence_data()
+    except Exception as e:
+        logging.error("Error downloading the gun violence data: %s", e)
+    try:
+        get_poverty_data()
+    except Exception as e:
+        logging.error("Error downloading the poverty data: %s", e)
+    try:
+        get_firearm_laws_data()
+    except Exception as e:
+        logging.error("Error downloading the firearm laws data: %s", e)
+    logging.info("All datasets downloaded successfully.")
+
 
 if __name__ == "__main__":
     get_datasets()
