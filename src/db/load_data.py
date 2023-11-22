@@ -40,11 +40,11 @@ def load_data_into_database(engine, data_directory):
 
 def main():
     logging.info("Loading data into the database...")
-    postgres_host = os.environ.get("POSTGRES_HOST", "0.0.0.0")
-    postgres_port = os.environ.get("POSTGRES_PORT", "5432")
-    postgres_db = os.environ.get("POSTGRES_DB", "guns_db")
-    postgres_user = os.environ.get("POSTGRES_USER", "postgres")
-    postgres_password = os.environ.get("POSTGRES_PASSWORD", "postgres")
+    postgres_host = os.environ.get("POSTGRES_HOST")
+    postgres_port = os.environ.get("POSTGRES_PORT")
+    postgres_db = os.environ.get("POSTGRES_DB")
+    postgres_user = os.environ.get("POSTGRES_USER")
+    postgres_password = os.environ.get("POSTGRES_PASSWORD")
 
     url = URL.create(
         drivername="postgresql+psycopg2",
