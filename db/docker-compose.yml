@@ -1,0 +1,49 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: guns_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 1s
+      timeout: 10s
+      retries: 10
+
+  data_loader:
+    container_name: data_loader
+    build:
+      context: ..
+      dockerfile: ./db/data_loader.Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_DB: guns_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+    
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pg.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 5050
+    ports:
+      - 5050:5050
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
