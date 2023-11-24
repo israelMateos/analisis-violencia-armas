@@ -1,7 +1,10 @@
 beautifulsoup4
 kaggle
+ipykernel
+ipywidgets
 openpyxl
 pandas
+ydata-profiling
 psycopg2-binary
 python-dotenv
 requests
