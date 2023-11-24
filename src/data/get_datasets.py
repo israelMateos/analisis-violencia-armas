@@ -7,6 +7,7 @@ The datasets are downloaded from the following sources:
 """
 
 import logging
+import os
 from collections import defaultdict
 from datetime import datetime
 
@@ -22,7 +23,8 @@ import kaggle  # pylint: disable=wrong-import-position
 
 # Generate a unique timestamp for the log file name
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-log_filename = f"download_datasets_{timestamp}.log"
+os.makedirs("logs", exist_ok=True)
+log_filename = f"logs/get_datasets_{timestamp}.log"
 
 # Configure logging to write to both console and the uniquely named log file
 logging.basicConfig(

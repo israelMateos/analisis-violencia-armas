@@ -1,8 +1,9 @@
 # Kaggle API
 kaggle.json
-
 # Database
 db/postgres_data
+# Logs
+logs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

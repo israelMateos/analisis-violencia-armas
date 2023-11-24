@@ -1,14 +1,28 @@
+"""Functions to load raw data into the database."""
 import logging
 import os
+from datetime import datetime
 
 import pandas as pd
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import Engine
 from sqlalchemy.engine.url import URL
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session, sessionmaker
 
+# Generate a unique timestamp for the log file name
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+os.makedirs("logs", exist_ok=True)
+log_filename = f"logs/load_data_{timestamp}.log"
+
+# Configure logging to write to both console and the uniquely named log file
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler(log_filename),
+        logging.StreamHandler(),
+    ],
 )
 
 
@@ -23,7 +37,7 @@ def create_raw_schema(session: Session) -> None:
         session.execute(text("CREATE SCHEMA IF NOT EXISTS raw"))
         session.commit()
         logging.info("Raw schema created.")
-    except Exception as e:
+    except SQLAlchemyError as e:
         logging.error("Error creating schema: %s", str(e))
 
 
