@@ -1,9 +1,11 @@
 beautifulsoup4
 kaggle
 ipykernel
+matplotlib
 ipywidgets
 openpyxl
 pandas
+seaborn
 ydata-profiling
 psycopg2-binary
 python-dotenv
