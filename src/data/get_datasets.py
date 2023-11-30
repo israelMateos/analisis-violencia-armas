@@ -183,6 +183,16 @@ def get_firearm_laws_data() -> None:
     logging.info("Firearm laws data downloaded successfully.")
 
 
+def get_population_data() -> None:
+    """Download the population data from the US Census Bureau."""
+    logging.info("Downloading the population data...")
+    url = "https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv"
+    response = requests.get(url, timeout=5)
+    with open("data/raw/population_data.csv", "wb") as f:
+        f.write(response.content)
+    logging.info("Population data downloaded successfully.")
+
+
 def get_datasets() -> None:
     """Download all the datasets to the data/raw directory."""
     logging.info("Downloading the datasets...")
@@ -198,6 +208,10 @@ def get_datasets() -> None:
         get_firearm_laws_data()
     except Exception as e:
         logging.error("Error downloading the firearm laws data: %s", e)
+    try:
+        get_population_data()
+    except Exception as e:
+        logging.error("Error downloading the population data: %s", e)
     logging.info("All datasets downloaded successfully.")
 
 
