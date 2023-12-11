@@ -193,6 +193,26 @@ def get_population_data() -> None:
     logging.info("Population data downloaded successfully.")
 
 
+def get_climate_states_codes() -> None:
+    """Get the internal state codes for the climate data."""
+    logging.info("Getting the internal state codes for the climate data...")
+    url = "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/state-readme.txt"
+    response = requests.get(url, timeout=5)
+    with open("data/raw/climate_state_codes.txt", "w") as f:
+        f.write(response.text)
+    logging.info("Internal state codes for the climate data downloaded successfully.")
+
+
+def get_climate_data() -> None:
+    """Download the climate data from the National Centers for Environmental Information."""
+    logging.info("Downloading the climate data...")
+    url = "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-tmpcst-v1.0.0-20231206"
+    response = requests.get(url, timeout=5)
+    with open("data/raw/climate_data.txt", "w") as f:
+        f.write(response.text)
+    logging.info("Climate data downloaded successfully.")
+
+
 def get_datasets() -> None:
     """Download all the datasets to the data/raw directory."""
     logging.info("Downloading the datasets...")
@@ -212,6 +232,14 @@ def get_datasets() -> None:
         get_population_data()
     except Exception as e:
         logging.error("Error downloading the population data: %s", e)
+    try:
+        get_climate_states_codes()
+    except Exception as e:
+        logging.error("Error downloading the climate state codes: %s", e)
+    try:
+        get_climate_data()
+    except Exception as e:
+        logging.error("Error downloading the climate data: %s", e)
     logging.info("All datasets downloaded successfully.")
 
 
