@@ -206,7 +206,9 @@ def get_climate_states_codes() -> None:
 def get_climate_data() -> None:
     """Download the climate data from the National Centers for Environmental Information."""
     logging.info("Downloading the climate data...")
-    url = "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-tmpcst-v1.0.0-20231206"
+    url = (
+        "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-tmpcst-v1.0.0-20231206"
+    )
     response = requests.get(url, timeout=5)
     with open("data/raw/climate_data.txt", "w") as f:
         f.write(response.text)
