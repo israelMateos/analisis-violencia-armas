@@ -206,38 +206,93 @@ def get_climate_states_codes() -> None:
 def get_climate_data() -> None:
     """Download the climate data from the National Centers for Environmental Information."""
     logging.info("Downloading the climate data...")
+
+    # Temperature data
+    logging.info("Downloading temperature data...")
     url = (
         "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-tmpcst-v1.0.0-20231206"
     )
     response = requests.get(url, timeout=5)
-    with open("data/raw/climate_data.txt", "w") as f:
+    with open("data/raw/temperature_data.txt", "w") as f:
         f.write(response.text)
+    logging.info("Temperature data downloaded successfully.")
+
+    # Precipitation data
+    logging.info("Downloading precipitation data...")
+    url = (
+        "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-pcpnst-v1.0.0-20231206"
+    )
+    response = requests.get(url, timeout=5)
+    with open("data/raw/precipitation_data.txt", "w") as f:
+        f.write(response.text)
+    logging.info("Precipitation data downloaded successfully.")
+
+    # PDSI data
+    logging.info("Downloading PDSI data...")
+    url = (
+        "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-pdsist-v1.0.0-20231206"
+    )
+    response = requests.get(url, timeout=5)
+    with open("data/raw/PDSI_data.txt", "w") as f:
+        f.write(response.text)
+    logging.info("PDSI data downloaded successfully.")
+
+    # PHDI data
+    logging.info("Downloading PHDI data...")
+    url = (
+        "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-phdist-v1.0.0-20231206"
+    )
+    response = requests.get(url, timeout=5)
+    with open("data/raw/PHDI_data.txt", "w") as f:
+        f.write(response.text)
+    logging.info("PHDI data downloaded successfully.")
+
+    # ZNDX data
+    logging.info("Downloading ZNDX data...")
+    url = (
+        "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-zndxst-v1.0.0-20231206"
+    )
+    response = requests.get(url, timeout=5)
+    with open("data/raw/ZNDX_data.txt", "w") as f:
+        f.write(response.text)
+    logging.info("ZNDX data downloaded successfully.")
+
+    # PMDI data
+    logging.info("Downloading PMDI data...")
+    url = (
+        "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/climdiv-pmdist-v1.0.0-20231206"
+    )
+    response = requests.get(url, timeout=5)
+    with open("data/raw/PMDI_data.txt", "w") as f:
+        f.write(response.text)
+    logging.info("PMDI data downloaded successfully.")
+
     logging.info("Climate data downloaded successfully.")
 
 
 def get_datasets() -> None:
     """Download all the datasets to the data/raw directory."""
     logging.info("Downloading the datasets...")
-    try:
-        get_gun_violence_data()
-    except Exception as e:
-        logging.error("Error downloading the gun violence data: %s", e)
-    try:
-        get_poverty_data()
-    except Exception as e:
-        logging.error("Error downloading the poverty data: %s", e)
-    try:
-        get_firearm_laws_data()
-    except Exception as e:
-        logging.error("Error downloading the firearm laws data: %s", e)
-    try:
-        get_population_data()
-    except Exception as e:
-        logging.error("Error downloading the population data: %s", e)
-    try:
-        get_climate_states_codes()
-    except Exception as e:
-        logging.error("Error downloading the climate state codes: %s", e)
+    # try:
+    #     get_gun_violence_data()
+    # except Exception as e:
+    #     logging.error("Error downloading the gun violence data: %s", e)
+    # try:
+    #     get_poverty_data()
+    # except Exception as e:
+    #     logging.error("Error downloading the poverty data: %s", e)
+    # try:
+    #     get_firearm_laws_data()
+    # except Exception as e:
+    #     logging.error("Error downloading the firearm laws data: %s", e)
+    # try:
+    #     get_population_data()
+    # except Exception as e:
+    #     logging.error("Error downloading the population data: %s", e)
+    # try:
+    #     get_climate_states_codes()
+    # except Exception as e:
+    #     logging.error("Error downloading the climate state codes: %s", e)
     try:
         get_climate_data()
     except Exception as e:
