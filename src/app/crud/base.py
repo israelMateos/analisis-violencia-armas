@@ -15,11 +15,11 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
     def __init__(self, model: Type[ModelType]) -> None:
         """CRUDBase class initialization."""
         self.model = model
-    
+
     def get(self, db: Session, id: Any) -> Optional[ModelType]:
         """Get a single record."""
         return db.query(self.model).filter(self.model.id == id).first()
-    
+
     def create(self, db: Session, *, obj_in: CreateSchemaType) -> ModelType:
         """Create a new record."""
         obj_in_data = jsonable_encoder(obj_in)
