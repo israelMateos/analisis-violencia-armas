@@ -416,6 +416,7 @@ def create_processed_tables() -> (
     Returns:
         Tuple[DataFrame, DataFrame, DataFrame, DataFrame, DataFrame]: Processed tables
     """
+    logging.info("Creating processed tables...")
     logging.info("Loading datasets...")
     (
         gun_violence_df,
@@ -476,6 +477,7 @@ def create_processed_tables() -> (
     )
     logging.info("incidents_combined table created")
 
+    logging.info("All tables created")
     return (
         incidents_weekend_table,
         incidents_climate_table,
@@ -483,14 +485,3 @@ def create_processed_tables() -> (
         incidents_firearm_laws_table,
         incidents_combined_table,
     )
-
-
-def main() -> None:
-    """Main function."""
-    logging.info("Creating processed tables...")
-    create_processed_tables()
-    logging.info("All tables created")
-
-
-if __name__ == "__main__":
-    main()
