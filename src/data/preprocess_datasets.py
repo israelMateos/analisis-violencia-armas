@@ -11,9 +11,7 @@ from typing import Any, List, Tuple
 import numpy as np
 import pandas as pd
 from pandas import DataFrame, Series
-
-from parse_climate_data import parse_climate_data # pylint: disable=import-error
-
+from parse_climate_data import parse_climate_data  # pylint: disable=import-error
 
 # Generate a unique timestamp for the log file name
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -383,9 +381,15 @@ def format_incidents_data(dataframe: DataFrame) -> DataFrame:
         dataframe[col] = extract_values_to_lists(dataframe[col])[col]
 
     # Separate date into year, month and day columns
-    dataframe["year"] = pd.DatetimeIndex(dataframe["date"]).year # pylint: disable=no-member
-    dataframe["month"] = pd.DatetimeIndex(dataframe["date"]).month # pylint: disable=no-member
-    dataframe["day"] = pd.DatetimeIndex(dataframe["date"]).day # pylint: disable=no-member
+    dataframe["year"] = pd.DatetimeIndex(
+        dataframe["date"]
+    ).year  # pylint: disable=no-member
+    dataframe["month"] = pd.DatetimeIndex(
+        dataframe["date"]
+    ).month  # pylint: disable=no-member
+    dataframe["day"] = pd.DatetimeIndex(
+        dataframe["date"]
+    ).day  # pylint: disable=no-member
 
     # Drop date column and reorder columns
     dataframe.drop(columns=["date"], inplace=True)
@@ -657,7 +661,8 @@ def load_datasets() -> (
 
     logging.info("Loading climate dataset...")
     climate_df = parse_climate_data(
-        "data/raw/climate_state_codes.txt", ["data/raw/temperature_data.txt", "data/raw/precipitation_data.txt"]
+        "data/raw/climate_state_codes.txt",
+        ["data/raw/temperature_data.txt", "data/raw/precipitation_data.txt"],
     )
     logging.info("Climate dataset loaded")
 
@@ -735,7 +740,8 @@ def preprocess_datasets() -> (
     )
 
 
-def main():
+def main() -> None:
+    """Main function"""
     logging.info("Preprocessing datasets...")
     preprocess_datasets()
     logging.info("Datasets preprocessed")
