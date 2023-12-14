@@ -381,15 +381,15 @@ def format_incidents_data(dataframe: DataFrame) -> DataFrame:
         dataframe[col] = extract_values_to_lists(dataframe[col])[col]
 
     # Separate date into year, month and day columns
-    dataframe["year"] = pd.DatetimeIndex(
+    dataframe["year"] = pd.DatetimeIndex(  # pylint: disable=no-member
         dataframe["date"]
-    ).year  # pylint: disable=no-member
-    dataframe["month"] = pd.DatetimeIndex(
+    ).year
+    dataframe["month"] = pd.DatetimeIndex(  # pylint: disable=no-member
         dataframe["date"]
-    ).month  # pylint: disable=no-member
-    dataframe["day"] = pd.DatetimeIndex(
+    ).month
+    dataframe["day"] = pd.DatetimeIndex(  # pylint: disable=no-member
         dataframe["date"]
-    ).day  # pylint: disable=no-member
+    ).day
 
     # Drop date column and reorder columns
     dataframe.drop(columns=["date"], inplace=True)
