@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   postgres:
-    image: postgres:latest
+    image: postgres:alpine
     container_name: postgres
     ports:
       - 5432:5432
@@ -26,47 +26,6 @@ services:
       postgres:
         condition: service_healthy
     volumes:
-      - shared_data:/app/data
-      - ./logs:/app/logs
-    environment:
-      POSTGRES_DB: guns_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
-
-  silver_processor:
-    container_name: silver_processor
-    build:
-      context: ..
-      dockerfile: ./db/silver_processor.Dockerfile
-    volumes:
-      - shared_data:/app/data
-      - ./logs:/app/logs
-    depends_on:
-      postgres:
-        condition: service_healthy
-      data_loader:
-        condition: service_completed_successfully
-    environment:
-      POSTGRES_DB: guns_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
-
-  gold_loader:
-    container_name: gold_loader
-    build:
-      context: ..
-      dockerfile: ./db/gold_loader.Dockerfile
-    depends_on:
-      postgres:
-        condition: service_healthy
-      silver_processor:
-        condition: service_completed_successfully
-    volumes:
-      - shared_data:/app/data
       - ./logs:/app/logs
     environment:
       POSTGRES_DB: guns_db
@@ -90,4 +49,3 @@ services:
 
 volumes:
   postgres_data:
-  shared_data:
