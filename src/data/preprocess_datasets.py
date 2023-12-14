@@ -68,8 +68,6 @@ def extract_values_to_lists(column: Series) -> DataFrame:
     new_column = {column.name: []}
     for row in column:
         new_row = []
-        if pd.isnull(row):
-            continue
         # Remove '||' and '|' separators
         no_bars = list(filter(None, row.split("|")))
         for item in no_bars:
@@ -85,8 +83,10 @@ def extract_values_to_lists(column: Series) -> DataFrame:
                     new_row.append(int(no_separator[1]))
                 else:
                     new_row.append(no_separator[1])
+            else:
+                new_row.append(item)
         new_column[column.name].append(new_row)
-
+    
     return pd.DataFrame.from_dict(new_column)
 
 
@@ -378,7 +378,7 @@ def format_incidents_data(dataframe: DataFrame) -> DataFrame:
     ]
 
     for col in columns_to_format:
-        dataframe[col] = extract_values_to_lists(dataframe[col])[col]
+        dataframe[col] = extract_values_to_lists(dataframe[col])[col].values
 
     # Separate date into year, month and day columns
     dataframe["year"] = pd.DatetimeIndex(  # pylint: disable=no-member
@@ -697,6 +697,7 @@ def preprocess_datasets() -> (
     Returns:
         Tuple[DataFrame, DataFrame, DataFrame, DataFrame, DataFrame, DataFrame]: Preprocessed datasets
     """
+    logging.info("Preprocessing datasets...")
     logging.info("Loading datasets...")
     (
         gun_violence_df,
@@ -730,6 +731,7 @@ def preprocess_datasets() -> (
     population_df = preprocess_population_dataset(population_df)
     logging.info("Population dataset preprocessed")
 
+    logging.info("Datasets preprocessed")
     return (
         gun_violence_df,
         climate_df,
@@ -738,14 +740,3 @@ def preprocess_datasets() -> (
         firearm_laws_codebook_df,
         population_df,
     )
-
-
-def main() -> None:
-    """Main function"""
-    logging.info("Preprocessing datasets...")
-    preprocess_datasets()
-    logging.info("Datasets preprocessed")
-
-
-if __name__ == "__main__":
-    main()
