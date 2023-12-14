@@ -86,7 +86,7 @@ def extract_values_to_lists(column: Series) -> DataFrame:
             else:
                 new_row.append(item)
         new_column[column.name].append(new_row)
-    
+
     return pd.DataFrame.from_dict(new_column)
 
 

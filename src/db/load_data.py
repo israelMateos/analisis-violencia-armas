@@ -1,9 +1,17 @@
 """Functions to load raw data into the database."""
 import logging
 import os
+import sys
+
+sys.path.append("/app/src/data")
 from datetime import datetime
+from typing import Tuple
 
 import pandas as pd
+from create_processed_data import (  # pylint: disable=import-error
+    create_processed_tables,
+)
+from preprocess_datasets import preprocess_datasets  # pylint: disable=import-error
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import Engine
 from sqlalchemy.engine.url import URL
@@ -26,26 +34,31 @@ logging.basicConfig(
 )
 
 
-def create_raw_schema(session: Session) -> None:
-    """Create the 'raw' schema in the database if it does not exist.
+def create_schema(session: Session, name: str) -> None:
+    """Create schema in the database if it does not exist.
 
     Args:
         session (sqlalchemy.orm.Session): Database session.
+        name (str): Name of the schema to create.
     """
-    logging.info("Creating the raw schema...")
+    logging.info("Creating the %s schema...", name)
     try:
-        session.execute(text("CREATE SCHEMA IF NOT EXISTS raw"))
+        session.execute(text(f"CREATE SCHEMA IF NOT EXISTS {name}"))
         session.commit()
-        logging.info("Raw schema created.")
+        logging.info("%s schema created.", name)
     except SQLAlchemyError as e:
         logging.error("Error creating schema: %s", str(e))
 
 
-def load_data_into_database(engine: Engine, data_directory: str) -> None:
+def load_data_into_database(
+    engine: Engine, schema_name: str, data_directory: str
+) -> None:
     """Load data from CSV or Excel files in a specified directory into the database.
 
     Args:
         engine (sqlalchemy.engine.Engine): Database engine.
+        session (sqlalchemy.orm.Session): Database session.
+        schema_name (str): Name of the schema to load data into.
         data_directory (str): Path to the directory containing data files.
     """
     files = [f for f in os.listdir(data_directory) if f.endswith((".csv", ".xlsx"))]
@@ -59,14 +72,20 @@ def load_data_into_database(engine: Engine, data_directory: str) -> None:
             if file.endswith(".xlsx")
             else pd.read_csv(file_path)
         )
+
         logging.info("Loading %s into the database...", file_path)
-        df.to_sql(table_name, engine, schema="raw", if_exists="replace", index=False)
+        df.to_sql(
+            table_name, engine, schema=schema_name, if_exists="replace", index=False
+        )
         logging.info("%s loaded into the database.", file_path)
 
 
-def main() -> None:
-    """Main function to load data into the database."""
-    logging.info("Loading data into the database...")
+def create_connection() -> Tuple[Engine, Session]:
+    """Create a connection to the database.
+
+    Returns:
+        Tuple[Engine, Session]: Database engine and session.
+    """
     postgres_host = os.environ.get("POSTGRES_HOST")
     postgres_port = os.environ.get("POSTGRES_PORT")
     postgres_db = os.environ.get("POSTGRES_DB")
@@ -89,12 +108,31 @@ def main() -> None:
     session = sessionmaker(bind=engine)()
     logging.info("Session created.")
 
-    create_raw_schema(session)
+    return engine, session
 
-    data_directory = "/app/data/raw"
+
+def main() -> None:
+    """Main function to load all data into the database."""
+    engine, session = create_connection()
 
     logging.info("Loading data into the database...")
-    load_data_into_database(engine, data_directory)
+    logging.info("Loading raw data into the database...")
+    create_schema(session, "raw")
+    load_data_into_database(engine, "raw", "/app/data/raw")
+    logging.info("Raw data loaded into the database.")
+
+    preprocess_datasets()
+    logging.info("Loading silver data into the database...")
+    create_schema(session, "silver")
+    load_data_into_database(engine, "silver", "/app/data/interim")
+    logging.info("silver data loaded into the database.")
+
+    create_processed_tables()
+    logging.info("Loading gold data into the database...")
+    create_schema(session, "gold")
+    load_data_into_database(engine, "gold", "/app/data/processed")
+    logging.info("gold data loaded into the database.")
+
     logging.info("Data loaded into the database.")
 
 
