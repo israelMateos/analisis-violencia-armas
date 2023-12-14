@@ -58,7 +58,11 @@ def add_primary_key(session: Session, schema_name: str, table_name: str) -> None
         schema_name (str): Name of the schema containing the table.
         table_name (str): Name of the table to add a primary key to.
     """
-    query = f"ALTER TABLE {schema_name}.{table_name} ADD COLUMN id SERIAL PRIMARY KEY" if table_name != "gun_violence_incidents" else f"ALTER TABLE {schema_name}.{table_name} ADD PRIMARY KEY (incident_id)"
+    query = (
+        f"ALTER TABLE {schema_name}.{table_name} ADD COLUMN id SERIAL PRIMARY KEY"
+        if table_name != "gun_violence_incidents"
+        else f"ALTER TABLE {schema_name}.{table_name} ADD PRIMARY KEY (incident_id)"
+    )
     logging.info("Adding primary key to %s...", table_name)
     try:
         session.execute(text(query))
