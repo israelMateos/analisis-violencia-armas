@@ -4,7 +4,7 @@ FROM python:3.9-alpine
 
 WORKDIR /app
 
-COPY requirements/app/backend/requirements.txt /app/backend/requirements.txt
+COPY requirements/backend/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./src/app/backend /app/src/app/backend
