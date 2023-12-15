@@ -1,8 +1,7 @@
 import sys
 
-sys.path.append("src/app")
+sys.path.append("src/app/backend")
 from sqlalchemy import BigInteger, Column, Double, Integer, String, Table
-from sqlalchemy.ext.declarative import declarative_base
 
 from db import Base  # pylint: disable=import-error
 

@@ -1,7 +1,7 @@
 """API endpoints for incidents_climate."""
 import sys
 
-sys.path.append("src/app")
+sys.path.append("src/app/backend")
 from crud.crud_incidents_climate import (  # pylint: disable=import-error
     CRUDIncidentsClimate,
 )

@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("src/app/schemas")
+sys.path.append("src/app/backend/schemas")
 from incident_climate import *
 from incident_combined import *
 from incident_firearm_laws import *

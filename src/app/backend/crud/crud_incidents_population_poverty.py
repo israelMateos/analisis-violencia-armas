@@ -1,7 +1,7 @@
 """CRUDIncidentsPopulationPoverty module."""
 import sys
 
-sys.path.append("src/app")
+sys.path.append("src/app/backend")
 from typing import Optional
 
 from crud.base import CRUDBase  # pylint: disable=import-error

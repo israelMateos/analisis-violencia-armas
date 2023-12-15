@@ -1,7 +1,7 @@
 """API endpoints for incidents_population_poverty."""
 import sys
 
-sys.path.append("src/app")
+sys.path.append("src/app/backend")
 from crud.crud_incidents_population_poverty import (  # pylint: disable=import-error
     CRUDIncidentsPopulationPoverty,
 )

@@ -1,7 +1,7 @@
 import logging
 import sys
 
-sys.path.append("src/app")
+sys.path.append("src/app/backend")
 import models  # pylint: disable=import-error
 from api import (  # pylint: disable=import-error
     incidents_climate,

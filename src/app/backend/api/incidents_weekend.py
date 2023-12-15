@@ -1,7 +1,7 @@
 """API endpoints for incidents_weekend."""
 import sys
 
-sys.path.append("src/app")
+sys.path.append("src/app/backend")
 from crud.crud_incidents_weekend import (  # pylint: disable=import-error
     CRUDIncidentsWeekend,
 )

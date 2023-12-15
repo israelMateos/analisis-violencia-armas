@@ -1,7 +1,7 @@
 """API endpoints for incidents_firearm_laws."""
 import sys
 
-sys.path.append("src/app")
+sys.path.append("src/app/backend")
 from crud.crud_incidents_firearm_laws import (  # pylint: disable=import-error
     CRUDIncidentsFirearmLaws,
 )
