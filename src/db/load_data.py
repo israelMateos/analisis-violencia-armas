@@ -50,8 +50,30 @@ def create_schema(session: Session, name: str) -> None:
         logging.error("Error creating schema: %s", str(e))
 
 
+def add_primary_key(session: Session, schema_name: str, table_name: str) -> None:
+    """Add a primary key to a table in the database.
+
+    Args:
+        session (sqlalchemy.orm.Session): Database session.
+        schema_name (str): Name of the schema containing the table.
+        table_name (str): Name of the table to add a primary key to.
+    """
+    query = (
+        f"ALTER TABLE {schema_name}.{table_name} ADD COLUMN id SERIAL PRIMARY KEY"
+        if table_name != "gun_violence_incidents"
+        else f"ALTER TABLE {schema_name}.{table_name} ADD PRIMARY KEY (incident_id)"
+    )
+    logging.info("Adding primary key to %s...", table_name)
+    try:
+        session.execute(text(query))
+        session.commit()
+        logging.info("Primary key added to %s.", table_name)
+    except SQLAlchemyError as e:
+        logging.error("Error adding primary key: %s", str(e))
+
+
 def load_data_into_database(
-    engine: Engine, schema_name: str, data_directory: str
+    engine: Engine, session: Session, schema_name: str, data_directory: str
 ) -> None:
     """Load data from CSV or Excel files in a specified directory into the database.
 
@@ -67,6 +89,9 @@ def load_data_into_database(
         file_path = os.path.join(data_directory, file)
         table_name = os.path.splitext(file)[0]
 
+        if table_name == "gun-violence-data_01-2013_03-2018":
+            table_name = "gun_violence_incidents"
+
         df = (
             pd.read_excel(file_path)
             if file.endswith(".xlsx")
@@ -77,6 +102,7 @@ def load_data_into_database(
         df.to_sql(
             table_name, engine, schema=schema_name, if_exists="replace", index=False
         )
+        add_primary_key(session, schema_name, table_name)
         logging.info("%s loaded into the database.", file_path)
 
 
@@ -118,19 +144,19 @@ def main() -> None:
     logging.info("Loading data into the database...")
     logging.info("Loading raw data into the database...")
     create_schema(session, "raw")
-    load_data_into_database(engine, "raw", "/app/data/raw")
+    load_data_into_database(engine, session, "raw", "/app/data/raw")
     logging.info("Raw data loaded into the database.")
 
     preprocess_datasets()
     logging.info("Loading silver data into the database...")
     create_schema(session, "silver")
-    load_data_into_database(engine, "silver", "/app/data/interim")
+    load_data_into_database(engine, session, "silver", "/app/data/interim")
     logging.info("silver data loaded into the database.")
 
     create_processed_tables()
     logging.info("Loading gold data into the database...")
     create_schema(session, "gold")
-    load_data_into_database(engine, "gold", "/app/data/processed")
+    load_data_into_database(engine, session, "gold", "/app/data/processed")
     logging.info("gold data loaded into the database.")
 
     logging.info("Data loaded into the database.")
