@@ -11,6 +11,7 @@ from api import (  # pylint: disable=import-error
     incidents_weekend,
 )
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from db import engine  # pylint: disable=import-error
 
@@ -18,6 +19,17 @@ logging.basicConfig()
 logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
 
 app = FastAPI()
+
+# CORS
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    # allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 models.Base.metadata.create_all(bind=engine)
 
