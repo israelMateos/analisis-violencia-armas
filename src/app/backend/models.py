@@ -10,7 +10,7 @@ class IncidentWeekend(Base):
     __table__ = Table(
         "incidents_weekend",
         Base.metadata,
-        Column("id", Integer, primary_key=True, nullable=False),
+        Column("id", Integer, primary_key=True, nullable=False, autoincrement=True),
         Column("state", String),
         Column("year", BigInteger),
         Column("is_weekend", BigInteger),
@@ -23,7 +23,7 @@ class IncidentClimate(Base):
     __table__ = Table(
         "incidents_climate",
         Base.metadata,
-        Column("id", Integer, primary_key=True, nullable=False),
+        Column("id", Integer, primary_key=True, nullable=False, autoincrement=True),
         Column("state", String),
         Column("year", BigInteger),
         Column("month", BigInteger),
@@ -38,7 +38,7 @@ class IncidentPopulationPoverty(Base):
     __table__ = Table(
         "incidents_population_poverty",
         Base.metadata,
-        Column("id", Integer, primary_key=True, nullable=False),
+        Column("id", Integer, primary_key=True, nullable=False, autoincrement=True),
         Column("state", String),
         Column("year", BigInteger),
         Column("poverty_rate", Double),
@@ -51,7 +51,7 @@ class IncidentFirearmLaws(Base):
     __table__ = Table(
         "incidents_firearm_laws",
         Base.metadata,
-        Column("id", Integer, primary_key=True, nullable=False),
+        Column("id", Integer, primary_key=True, nullable=False, autoincrement=True),
         Column("state", String),
         Column("year", BigInteger),
         Column("n_incidents", BigInteger),
@@ -78,7 +78,7 @@ class IncidentCombined(Base):
     __table__ = Table(
         "incidents_combined",
         Base.metadata,
-        Column("id", Integer, primary_key=True, nullable=False),
+        Column("id", Integer, primary_key=True, nullable=False, autoincrement=True),
         Column("state", String),
         Column("year", BigInteger),
         Column("n_incidents", BigInteger),
