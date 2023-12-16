@@ -1,14 +1,11 @@
-# models.py
-from pydantic import BaseModel
+import sys
 
-
-class IncidentBase(BaseModel):
-    id: int
-    state: str
-    year: int
+sys.path.append("src/app/backend/")
+from schemas.base import IncidentBase  # pylint: disable=import-error
 
 
 class IncidentWeekend(IncidentBase):
+    id: int
     is_weekend: int
     n_incidents_per_day: float
 
@@ -20,6 +17,5 @@ class IncidentWeekendCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentWeekendUpdate(IncidentBase):
-    is_weekend: int
-    n_incidents_per_day: float
+class IncidentWeekendUpdate(IncidentWeekendCreate):
+    pass

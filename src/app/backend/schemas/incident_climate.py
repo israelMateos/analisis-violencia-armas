@@ -1,14 +1,11 @@
-# models.py
-from pydantic import BaseModel
+import sys
 
-
-class IncidentBase(BaseModel):
-    id: int
-    state: str
-    year: int
+sys.path.append("src/app/backend")
+from schemas.base import IncidentBase  # pylint: disable=import-error
 
 
 class IncidentClimate(IncidentBase):
+    id: int
     month: int
     n_incidents: float
     average_temperature: float
@@ -24,8 +21,5 @@ class IncidentClimateCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentClimateUpdate(IncidentBase):
-    month: int
-    n_incidents: float
-    average_temperature: float
-    average_precipitation: float
+class IncidentClimateUpdate(IncidentClimateCreate):
+    pass

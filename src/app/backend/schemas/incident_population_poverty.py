@@ -1,14 +1,11 @@
-# models.py
-from pydantic import BaseModel
+import sys
 
-
-class IncidentBase(BaseModel):
-    id: int
-    state: str
-    year: int
+sys.path.append("src/app/backend")
+from schemas.base import IncidentBase  # pylint: disable=import-error
 
 
 class IncidentPopulationPoverty(IncidentBase):
+    id: int
     poverty_rate: float
     n_incidents: float
 
@@ -20,6 +17,5 @@ class IncidentPopulationPovertyCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentPopulationPovertyUpdate(IncidentBase):
-    poverty_rate: float
-    n_incidents: float
+class IncidentPopulationPovertyUpdate(IncidentPopulationPovertyCreate):
+    pass
