@@ -95,3 +95,13 @@ async def update_incidents_weekend(
     return CRUDIncidentsWeekend(IncidentWeekend).update(
         db, db_obj=db_incidents_weekend, obj_in=incidents_weekend
     )
+
+
+# Delete incidents_weekend
+@router.delete("/incidents/weekend/{id}")
+async def delete_incidents_weekend(id: int, db: Session = Depends(get_db)):
+    """Delete incidents_weekend."""
+    db_incidents_weekend = CRUDIncidentsWeekend(IncidentWeekend).get(db, id=id)
+    if not db_incidents_weekend:
+        raise HTTPException(status_code=404, detail="Incidents_weekend not found")
+    return CRUDIncidentsWeekend(IncidentWeekend).remove(db, id=id)

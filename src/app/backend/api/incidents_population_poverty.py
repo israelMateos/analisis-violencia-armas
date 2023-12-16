@@ -118,3 +118,19 @@ async def update_incidents_population_poverty(
     return CRUDIncidentsPopulationPoverty(IncidentPopulationPoverty).update(
         db, db_obj=db_incidents_population_poverty, obj_in=incidents_population_poverty
     )
+
+
+# Delete incidents_population_poverty
+@router.delete("/incidents/population_poverty/{id}")
+async def remove_incidents_population_poverty(id: int, db: Session = Depends(get_db)):
+    """Delete incidents_population_poverty."""
+    db_incidents_population_poverty = CRUDIncidentsPopulationPoverty(
+        IncidentPopulationPoverty
+    ).get(db, id=id)
+    if not db_incidents_population_poverty:
+        raise HTTPException(
+            status_code=404, detail="Incidents_population_poverty not found"
+        )
+    return CRUDIncidentsPopulationPoverty(IncidentPopulationPoverty).remove(
+        db, id=db_incidents_population_poverty.id
+    )

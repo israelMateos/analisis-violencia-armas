@@ -81,3 +81,8 @@ class CRUDIncidentsPopulationPoverty(
         else:
             update_data = obj_in.dict(exclude_unset=True)
         return super().update(db, db_obj=db_obj, obj_in=update_data)
+
+    # DELETE
+    def remove(self, db: Session, *, id: int) -> IncidentPopulationPoverty:
+        """Remove incidents_population_poverty."""
+        return super().remove(db, id=id)
