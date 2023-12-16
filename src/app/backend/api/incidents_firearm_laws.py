@@ -103,3 +103,15 @@ async def update_incidents_firearm_laws(
     return CRUDIncidentsFirearmLaws(IncidentFirearmLaws).update(
         db, db_obj=db_incidents_firearm_laws, obj_in=incidents_firearm_laws
     )
+
+
+# Delete incidents_firearm_laws
+@router.delete("/incidents/firearm_laws/{id}")
+async def delete_incidents_firearm_laws(id: int, db: Session = Depends(get_db)):
+    """Delete incidents_firearm_laws."""
+    db_incidents_firearm_laws = CRUDIncidentsFirearmLaws(IncidentFirearmLaws).get(
+        db, id=id
+    )
+    if not db_incidents_firearm_laws:
+        raise HTTPException(status_code=404, detail="Incidents_firearm_laws not found")
+    return CRUDIncidentsFirearmLaws(IncidentFirearmLaws).remove(db, id=id)

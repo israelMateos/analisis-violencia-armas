@@ -93,3 +93,13 @@ async def update_incidents_combined(
     return CRUDIncidentsCombined(IncidentCombined).update(
         db, db_obj=db_obj, obj_in=incidents_combined
     )
+
+
+# Delete incidents_combined
+@router.delete("/incidents/combined/{id}")
+async def delete_incidents_combined(id: int, db: Session = Depends(get_db)):
+    """Delete incidents_combined."""
+    db_obj = CRUDIncidentsCombined(IncidentCombined).get(db, id=id)
+    if not db_obj:
+        raise HTTPException(status_code=404, detail="Incidents_combined not found")
+    return CRUDIncidentsCombined(IncidentCombined).remove(db, id=id)
