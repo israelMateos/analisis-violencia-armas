@@ -58,6 +58,20 @@ async def get_incidents_combined_by_year(state: str, db: Session = Depends(get_d
     return incidents_combined
 
 
+# Get incidents_combined by state and year
+@router.get("/incidents/combined/{state}/{year}", response_model=None)
+async def get_incidents_combined_by_state_and_year(
+    state: str, year: int, db: Session = Depends(get_db)
+):
+    """Get all incidents_combined by state and year."""
+    incidents_combined = CRUDIncidentsCombined(
+        IncidentCombined
+    ).get_multi_by_state_and_year(db, state=state, year=year)
+    if not incidents_combined:
+        raise HTTPException(status_code=404, detail="Incidents_combined not found")
+    return incidents_combined
+
+
 # Create incidents_combined
 @router.post("/incidents/combined/")
 async def create_incidents_combined(

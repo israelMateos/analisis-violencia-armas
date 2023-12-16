@@ -62,6 +62,20 @@ async def get_incidents_firearm_laws_by_year(state: str, db: Session = Depends(g
     return incidents_firearm_laws
 
 
+# Get incidents_firearm_laws by state and year
+@router.get("/incidents/firearm_laws/{state}/{year}", response_model=None)
+async def get_incidents_firearm_laws_by_state_and_year(
+    state: str, year: int, db: Session = Depends(get_db)
+):
+    """Get all incidents_firearm_laws by state and year."""
+    incidents_firearm_laws = CRUDIncidentsFirearmLaws(
+        IncidentFirearmLaws
+    ).get_multi_by_state_and_year(db, state=state, year=year)
+    if not incidents_firearm_laws:
+        raise HTTPException(status_code=404, detail="Incidents_firearm_laws not found")
+    return incidents_firearm_laws
+
+
 # Create incidents_firearm_laws
 @router.post("/incidents/firearm_laws/")
 async def create_incidents_firearm_laws(

@@ -58,6 +58,20 @@ async def get_incidents_weekend_by_year(state: str, db: Session = Depends(get_db
     return incidents_weekend
 
 
+# Get incidents_weekend by state and year
+@router.get("/incidents/weekend/{state}/{year}")
+async def get_incidents_weekend_by_state_and_year(
+    state: str, year: int, db: Session = Depends(get_db)
+):
+    """Get all incidents_weekend by state and year."""
+    incidents_weekend = CRUDIncidentsWeekend(
+        IncidentWeekend
+    ).get_multi_by_state_and_year(db, state=state, year=year)
+    if not incidents_weekend:
+        raise HTTPException(status_code=404, detail="Incidents_weekend not found")
+    return incidents_weekend
+
+
 # Create incidents_weekend
 @router.post("/incidents/weekend/")
 async def create_incidents_weekend(

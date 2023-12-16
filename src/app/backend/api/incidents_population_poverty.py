@@ -72,6 +72,22 @@ async def get_incidents_population_poverty_by_year(
     return incidents_population_poverty
 
 
+# Get incidents_population_poverty by state and year
+@router.get("/incidents/population_poverty/{state}/{year}", response_model=None)
+async def get_incidents_population_poverty_by_state_and_year(
+    state: str, year: int, db: Session = Depends(get_db)
+):
+    """Get all incidents_population_poverty by state and year."""
+    incidents_population_poverty = CRUDIncidentsPopulationPoverty(
+        IncidentPopulationPoverty
+    ).get_multi_by_state_and_year(db, state=state, year=year)
+    if not incidents_population_poverty:
+        raise HTTPException(
+            status_code=404, detail="Incidents_population_poverty not found"
+        )
+    return incidents_population_poverty
+
+
 # Create incidents_population_poverty
 @router.post("/incidents/population_poverty/")
 async def create_incidents_population_poverty(

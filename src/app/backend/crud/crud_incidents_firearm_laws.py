@@ -37,6 +37,16 @@ class CRUDIncidentsFirearmLaws(
         """Get all incidents_firearm_laws by year."""
         return db.query(self.model).filter(self.model.year == year).all()
 
+    def get_multi_by_state_and_year(
+        self, db: Session, *, state: str, year: int
+    ) -> Optional[IncidentFirearmLaws]:
+        """Get all incidents_firearm_laws by state and year."""
+        return (
+            db.query(self.model)
+            .filter(self.model.state == state, self.model.year == year)
+            .all()
+        )
+
     # POST
     def create(
         self, db: Session, *, obj_in: IncidentFirearmLawsCreate
