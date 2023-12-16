@@ -3,6 +3,7 @@ import sys
 sys.path.append("src/app/backend")
 from schemas.base import IncidentBase  # pylint: disable=import-error
 
+
 class IncidentCombined(IncidentBase):
     id: int
     n_incidents: float

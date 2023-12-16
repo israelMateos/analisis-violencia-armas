@@ -38,7 +38,9 @@ class CRUDIncidentsCombined(
         return db.query(self.model).filter(self.model.year == year).all()
 
     # POST
-    def create(self, db: Session, *, obj_in: IncidentCombinedCreate) -> IncidentCombined:
+    def create(
+        self, db: Session, *, obj_in: IncidentCombinedCreate
+    ) -> IncidentCombined:
         """Create incidents_combined."""
         db_obj = IncidentCombined(
             state=obj_in.state,
@@ -69,7 +71,9 @@ class CRUDIncidentsCombined(
         return db_obj
 
     # PUT
-    def update(self, db: Session, *, db_obj: IncidentCombined, obj_in: IncidentCombinedUpdate) -> IncidentCombined:
+    def update(
+        self, db: Session, *, db_obj: IncidentCombined, obj_in: IncidentCombinedUpdate
+    ) -> IncidentCombined:
         """Update incidents_combined."""
         if isinstance(obj_in, dict):
             update_data = obj_in

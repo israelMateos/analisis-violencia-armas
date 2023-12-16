@@ -42,7 +42,9 @@ class CRUDIncidentsPopulationPoverty(
         return db.query(self.model).filter(self.model.year == year).all()
 
     # POST
-    def create(self, db: Session, *, obj_in: IncidentPopulationPovertyCreate) -> IncidentPopulationPoverty:
+    def create(
+        self, db: Session, *, obj_in: IncidentPopulationPovertyCreate
+    ) -> IncidentPopulationPoverty:
         """Create incidents_population_poverty."""
         db_obj = IncidentPopulationPoverty(
             state=obj_in.state,
@@ -56,7 +58,13 @@ class CRUDIncidentsPopulationPoverty(
         return db_obj
 
     # PUT
-    def update(self, db: Session, *, db_obj: IncidentPopulationPoverty, obj_in: IncidentPopulationPovertyUpdate) -> IncidentPopulationPoverty:
+    def update(
+        self,
+        db: Session,
+        *,
+        db_obj: IncidentPopulationPoverty,
+        obj_in: IncidentPopulationPovertyUpdate
+    ) -> IncidentPopulationPoverty:
         """Update incidents_population_poverty."""
         if isinstance(obj_in, dict):
             update_data = obj_in

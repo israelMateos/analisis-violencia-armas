@@ -38,7 +38,9 @@ class CRUDIncidentsFirearmLaws(
         return db.query(self.model).filter(self.model.year == year).all()
 
     # POST
-    def create(self, db: Session, *, obj_in: IncidentFirearmLawsCreate) -> IncidentFirearmLaws:
+    def create(
+        self, db: Session, *, obj_in: IncidentFirearmLawsCreate
+    ) -> IncidentFirearmLaws:
         """Create incidents_firearm_laws."""
         db_obj = IncidentFirearmLaws(
             state=obj_in.state,
@@ -66,7 +68,13 @@ class CRUDIncidentsFirearmLaws(
         return db_obj
 
     # PUT
-    def update(self, db: Session, *, db_obj: IncidentFirearmLaws, obj_in: IncidentFirearmLawsUpdate) -> IncidentFirearmLaws:
+    def update(
+        self,
+        db: Session,
+        *,
+        db_obj: IncidentFirearmLaws,
+        obj_in: IncidentFirearmLawsUpdate
+    ) -> IncidentFirearmLaws:
         """Update incidents_firearm_laws."""
         if isinstance(obj_in, dict):
             update_data = obj_in

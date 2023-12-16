@@ -49,9 +49,11 @@ class CRUDIncidentsWeekend(
         db.commit()
         db.refresh(db_obj)
         return db_obj
-    
+
     # PUT
-    def update(self, db: Session, *, db_obj: IncidentWeekend, obj_in: IncidentWeekendUpdate) -> IncidentWeekend:
+    def update(
+        self, db: Session, *, db_obj: IncidentWeekend, obj_in: IncidentWeekendUpdate
+    ) -> IncidentWeekend:
         """Update incidents_weekend."""
         if isinstance(obj_in, dict):
             update_data = obj_in

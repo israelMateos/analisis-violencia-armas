@@ -36,7 +36,7 @@ class CRUDIncidentsClimate(
     def get_multi_by_year(self, db: Session, *, year: int) -> Optional[IncidentClimate]:
         """Get all incidents_climate by year."""
         return db.query(self.model).filter(self.model.year == year).all()
-    
+
     # POST
     def create(self, db: Session, *, obj_in: IncidentClimateCreate) -> IncidentClimate:
         """Create incidents_climate."""
@@ -54,7 +54,9 @@ class CRUDIncidentsClimate(
         return db_obj
 
     # PUT
-    def update(self, db: Session, *, db_obj: IncidentClimate, obj_in: IncidentClimateUpdate) -> IncidentClimate:
+    def update(
+        self, db: Session, *, db_obj: IncidentClimate, obj_in: IncidentClimateUpdate
+    ) -> IncidentClimate:
         """Update incidents_climate."""
         if isinstance(obj_in, dict):
             update_data = obj_in

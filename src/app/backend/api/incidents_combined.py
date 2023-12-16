@@ -7,7 +7,10 @@ from crud.crud_incidents_combined import (  # pylint: disable=import-error
 )
 from fastapi import APIRouter, Depends, HTTPException
 from models import IncidentCombined  # pylint: disable=import-error
-from schemas import IncidentCombinedCreate, IncidentCombinedUpdate  # pylint: disable=import-error
+from schemas import (  # pylint: disable=import-error
+    IncidentCombinedCreate,
+    IncidentCombinedUpdate,
+)
 from sqlalchemy.orm import Session
 
 from db import get_db  # pylint: disable=import-error
@@ -54,6 +57,7 @@ async def get_incidents_combined_by_year(state: str, db: Session = Depends(get_d
         raise HTTPException(status_code=404, detail="Incidents_combined not found")
     return incidents_combined
 
+
 # Create incidents_combined
 @router.post("/incidents/combined/")
 async def create_incidents_combined(
@@ -61,6 +65,7 @@ async def create_incidents_combined(
 ):
     """Create incidents_combined."""
     return CRUDIncidentsCombined(IncidentCombined).create(db, obj_in=incidents_combined)
+
 
 # Update incidents_combined
 @router.put("/incidents/combined/{id}")
