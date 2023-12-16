@@ -2,7 +2,7 @@ FROM python:3.9-alpine
 
 WORKDIR /app
 
-COPY requirements/containers/requirements.txt /app/requirements.txt
+COPY requirements/data_loader/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./src/data /app/src/data
