@@ -20,6 +20,7 @@ class CRUDIncidentsPopulationPoverty(
         IncidentPopulationPovertyUpdate,
     ]
 ):
+    # GET
     def get(self, db: Session, *, id: int) -> Optional[IncidentPopulationPoverty]:
         """Get incidents_population_poverty by id."""
         return db.query(self.model).filter(self.model.id == id).first()
@@ -39,3 +40,17 @@ class CRUDIncidentsPopulationPoverty(
     ) -> Optional[IncidentPopulationPoverty]:
         """Get all incidents_population_poverty by year."""
         return db.query(self.model).filter(self.model.year == year).all()
+
+    # POST
+    def create(self, db: Session, *, obj_in: IncidentPopulationPovertyCreate) -> IncidentPopulationPoverty:
+        """Create incidents_population_poverty."""
+        db_obj = IncidentPopulationPoverty(
+            state=obj_in.state,
+            year=obj_in.year,
+            n_incidents=obj_in.n_incidents,
+            poverty_rate=obj_in.poverty_rate,
+        )
+        db.add(db_obj)
+        db.commit()
+        db.refresh(db_obj)
+        return db_obj

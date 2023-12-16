@@ -7,6 +7,7 @@ from crud.crud_incidents_climate import (  # pylint: disable=import-error
 )
 from fastapi import APIRouter, Depends, HTTPException
 from models import IncidentClimate  # pylint: disable=import-error
+from schemas import IncidentClimateCreate  # pylint: disable=import-error
 from sqlalchemy.orm import Session
 
 from db import get_db  # pylint: disable=import-error
@@ -52,3 +53,11 @@ async def get_incidents_climate_by_year(state: str, db: Session = Depends(get_db
     if not incidents_climate:
         raise HTTPException(status_code=404, detail="Incidents_climate not found")
     return incidents_climate
+
+# Create incidents_climate
+@router.post("/incidents/climate/")
+async def create_incidents_climate(
+    incidents_climate: IncidentClimateCreate, db: Session = Depends(get_db)
+):
+    """Create incidents_climate."""
+    return CRUDIncidentsClimate(IncidentClimate).create(db, obj_in=incidents_climate)
