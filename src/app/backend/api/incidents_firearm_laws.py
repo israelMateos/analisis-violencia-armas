@@ -95,4 +95,4 @@ async def delete_incidents_firearm_laws(id: int, db: Session = Depends(get_db)):
     )
     if not db_incidents_firearm_laws:
         raise HTTPException(status_code=404, detail="Incidents_firearm_laws not found")
-    return CRUDIncidentsFirearmLaws(IncidentFirearmLaws).remove(db, id=id)
+    return CRUDIncidentsFirearmLaws(IncidentFirearmLaws).remove(db, id=db_incidents_firearm_laws.id)

@@ -82,7 +82,7 @@ async def update_incidents_climate(
 @router.delete("/incidents/climate/{id}")
 async def delete_incidents_climate(id: int, db: Session = Depends(get_db)):
     """Delete incidents_climate."""
-    db_obj = CRUDIncidentsClimate(IncidentClimate).get(db, id=id)
-    if not db_obj:
+    db_incidents_climate = CRUDIncidentsClimate(IncidentClimate).get(db, id=id)
+    if not db_incidents_climate:
         raise HTTPException(status_code=404, detail="Incidents_climate not found")
-    return CRUDIncidentsClimate(IncidentClimate).delete(db, db_obj=db_obj)
+    return CRUDIncidentsClimate(IncidentClimate).remove(db, id=db_incidents_climate.id)

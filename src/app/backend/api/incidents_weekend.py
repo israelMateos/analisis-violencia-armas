@@ -87,4 +87,4 @@ async def delete_incidents_weekend(id: int, db: Session = Depends(get_db)):
     db_incidents_weekend = CRUDIncidentsWeekend(IncidentWeekend).get(db, id=id)
     if not db_incidents_weekend:
         raise HTTPException(status_code=404, detail="Incidents_weekend not found")
-    return CRUDIncidentsWeekend(IncidentWeekend).remove(db, id=id)
+    return CRUDIncidentsWeekend(IncidentWeekend).remove(db, id=db_incidents_weekend.id)
