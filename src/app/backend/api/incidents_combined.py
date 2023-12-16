@@ -34,39 +34,28 @@ async def get_incidents_combined_by_id(id: int, db: Session = Depends(get_db)):
     return incidents_combined
 
 
-# Get incidents_combined by state
-@router.get("/incidents/combined/{state}", response_model=None)
-async def get_incidents_combined_by_state(state: str, db: Session = Depends(get_db)):
-    """Get all incidents_combined by state."""
-    incidents_combined = CRUDIncidentsCombined(IncidentCombined).get_multi_by_state(
-        db, state=state
-    )
-    if not incidents_combined:
-        raise HTTPException(status_code=404, detail="Incidents_combined not found")
-    return incidents_combined
-
-
-# Get incidents_combined by year
-@router.get("/incidents/combined/{year}", response_model=None)
-async def get_incidents_combined_by_year(state: str, db: Session = Depends(get_db)):
-    """Get all incidents_combined by year."""
-    incidents_combined = CRUDIncidentsCombined(IncidentCombined).get_multi_by_year(
-        db, state=state
-    )
-    if not incidents_combined:
-        raise HTTPException(status_code=404, detail="Incidents_combined not found")
-    return incidents_combined
-
-
-# Get incidents_combined by state and year
-@router.get("/incidents/combined/{state}/{year}", response_model=None)
-async def get_incidents_combined_by_state_and_year(
-    state: str, year: int, db: Session = Depends(get_db)
+# Get incidents_combined by state and/or year
+@router.get("/incidents/combined/", response_model=None)
+async def get_incidents_combined(
+    state: str | None = None,
+    year: int | None = None,
+    db: Session = Depends(get_db)
 ):
-    """Get all incidents_combined by state and year."""
-    incidents_combined = CRUDIncidentsCombined(
-        IncidentCombined
-    ).get_multi_by_state_and_year(db, state=state, year=year)
+    """Get all incidents_combined by state and/or year."""
+    if state and year:
+        incidents_combined = CRUDIncidentsCombined(
+            IncidentCombined
+        ).get_multi_by_state_and_year(db, state=state, year=year)
+    elif state:
+        incidents_combined = CRUDIncidentsCombined(
+            IncidentCombined
+        ).get_multi_by_state(db, state=state)
+    elif year:
+        incidents_combined = CRUDIncidentsCombined(
+            IncidentCombined
+        ).get_multi_by_year(db, year=year)
+    else:
+        incidents_combined = CRUDIncidentsCombined(IncidentCombined).get_multi(db)
     if not incidents_combined:
         raise HTTPException(status_code=404, detail="Incidents_combined not found")
     return incidents_combined

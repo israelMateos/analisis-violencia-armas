@@ -18,12 +18,6 @@ from db import get_db  # pylint: disable=import-error
 router = APIRouter()
 
 
-@router.get("/incidents/population_poverty/", response_model=None)
-async def get_incidents_population_poverty(db: Session = Depends(get_db)):
-    """Get all incidents_population_poverty."""
-    return CRUDIncidentsPopulationPoverty(IncidentPopulationPoverty).get_multi(db)
-
-
 # Get incidents_population_poverty by id
 @router.get("/incidents/population_poverty/{id}", response_model=None)
 async def get_incidents_population_poverty_by_id(
@@ -40,51 +34,30 @@ async def get_incidents_population_poverty_by_id(
     return incidents_population_poverty
 
 
-# Get incidents_population_poverty by state
-@router.get("/incidents/population_poverty/{state}", response_model=None)
-async def get_incidents_population_poverty_by_state(
-    state: str, db: Session = Depends(get_db)
+# Get incidents_population_poverty by state and/or year
+@router.get("/incidents/population_poverty/", response_model=None)
+async def get_incidents_population_poverty(
+    state: str | None = None,
+    year: int | None = None,
+    db: Session = Depends(get_db)
 ):
-    """Get all incidents_population_poverty by state."""
-    incidents_population_poverty = CRUDIncidentsPopulationPoverty(
-        IncidentPopulationPoverty
-    ).get_multi_by_state(db, state=state)
+    """Get all incidents_population_poverty by state and/or year."""
+    if state and year:
+        incidents_population_poverty = CRUDIncidentsPopulationPoverty(
+            IncidentPopulationPoverty
+        ).get_multi_by_state_and_year(db, state=state, year=year)
+    elif state:
+        incidents_population_poverty = CRUDIncidentsPopulationPoverty(
+            IncidentPopulationPoverty
+        ).get_multi_by_state(db, state=state)
+    elif year:
+        incidents_population_poverty = CRUDIncidentsPopulationPoverty(
+            IncidentPopulationPoverty
+        ).get_multi_by_year(db, year=year)
+    else:
+        incidents_population_poverty = CRUDIncidentsPopulationPoverty(IncidentPopulationPoverty).get_multi(db)
     if not incidents_population_poverty:
-        raise HTTPException(
-            status_code=404, detail="Incidents_population_poverty not found"
-        )
-    return incidents_population_poverty
-
-
-# Get incidents_population_poverty by year
-@router.get("/incidents/population_poverty/{year}", response_model=None)
-async def get_incidents_population_poverty_by_year(
-    state: str, db: Session = Depends(get_db)
-):
-    """Get all incidents_population_poverty by year."""
-    incidents_population_poverty = CRUDIncidentsPopulationPoverty(
-        IncidentPopulationPoverty
-    ).get_multi_by_year(db, state=state)
-    if not incidents_population_poverty:
-        raise HTTPException(
-            status_code=404, detail="Incidents_population_poverty not found"
-        )
-    return incidents_population_poverty
-
-
-# Get incidents_population_poverty by state and year
-@router.get("/incidents/population_poverty/{state}/{year}", response_model=None)
-async def get_incidents_population_poverty_by_state_and_year(
-    state: str, year: int, db: Session = Depends(get_db)
-):
-    """Get all incidents_population_poverty by state and year."""
-    incidents_population_poverty = CRUDIncidentsPopulationPoverty(
-        IncidentPopulationPoverty
-    ).get_multi_by_state_and_year(db, state=state, year=year)
-    if not incidents_population_poverty:
-        raise HTTPException(
-            status_code=404, detail="Incidents_population_poverty not found"
-        )
+        raise HTTPException(status_code=404, detail="Incidents_population_poverty not found")
     return incidents_population_poverty
 
 

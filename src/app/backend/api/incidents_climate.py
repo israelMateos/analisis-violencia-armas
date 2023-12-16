@@ -18,12 +18,6 @@ from db import get_db  # pylint: disable=import-error
 router = APIRouter()
 
 
-@router.get("/incidents/climate/", response_model=None)
-async def get_incidents_climate(db: Session = Depends(get_db)):
-    """Get all incidents_climate."""
-    return CRUDIncidentsClimate(IncidentClimate).get_multi(db)
-
-
 # Get incidents_climate by id
 @router.get("/incidents/climate/{id}", response_model=None)
 async def get_incidents_climate_by_id(id: int, db: Session = Depends(get_db)):
@@ -34,25 +28,28 @@ async def get_incidents_climate_by_id(id: int, db: Session = Depends(get_db)):
     return incidents_climate
 
 
-# Get incidents_climate by state
-@router.get("/incidents/climate/{state}", response_model=None)
-async def get_incidents_climate_by_state(state: str, db: Session = Depends(get_db)):
-    """Get all incidents_climate by state."""
-    incidents_climate = CRUDIncidentsClimate(IncidentClimate).get_multi_by_state(
-        db, state=state
-    )
-    if not incidents_climate:
-        raise HTTPException(status_code=404, detail="Incidents_climate not found")
-    return incidents_climate
-
-
-# Get incidents_climate by year
-@router.get("/incidents/climate/{year}", response_model=None)
-async def get_incidents_climate_by_year(state: str, db: Session = Depends(get_db)):
-    """Get all incidents_climate by year."""
-    incidents_climate = CRUDIncidentsClimate(IncidentClimate).get_multi_by_year(
-        db, state=state
-    )
+# Get incidents_climate by state and/or year
+@router.get("/incidents/climate/", response_model=None)
+async def get_incidents_climate(
+    state: str | None = None,
+    year: int | None = None,
+    db: Session = Depends(get_db)
+):
+    """Get all incidents_climate by state and/or year."""
+    if state and year:
+        incidents_climate = CRUDIncidentsClimate(
+            IncidentClimate
+        ).get_multi_by_state_and_year(db, state=state, year=year)
+    elif state:
+        incidents_climate = CRUDIncidentsClimate(
+            IncidentClimate
+        ).get_multi_by_state(db, state=state)
+    elif year:
+        incidents_climate = CRUDIncidentsClimate(
+            IncidentClimate
+        ).get_multi_by_year(db, year=year)
+    else:
+        incidents_climate = CRUDIncidentsClimate(IncidentClimate).get_multi(db)
     if not incidents_climate:
         raise HTTPException(status_code=404, detail="Incidents_climate not found")
     return incidents_climate

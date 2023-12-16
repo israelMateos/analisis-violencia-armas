@@ -18,12 +18,6 @@ from db import get_db  # pylint: disable=import-error
 router = APIRouter()
 
 
-@router.get("/incidents/weekend/")
-async def get_incidents_weekend(db: Session = Depends(get_db)):
-    """Get all incidents_weekend."""
-    return CRUDIncidentsWeekend(IncidentWeekend).get_multi(db)
-
-
 # Get incidents_weekend by id
 @router.get("/incidents/weekend/{id}")
 async def get_incidents_weekend_by_id(id: int, db: Session = Depends(get_db)):
@@ -34,39 +28,28 @@ async def get_incidents_weekend_by_id(id: int, db: Session = Depends(get_db)):
     return incidents_weekend
 
 
-# Get incidents_weekend by state
-@router.get("/incidents/weekend/{state}")
-async def get_incidents_weekend_by_state(state: str, db: Session = Depends(get_db)):
-    """Get all incidents_weekend by state."""
-    incidents_weekend = CRUDIncidentsWeekend(IncidentWeekend).get_multi_by_state(
-        db, state=state
-    )
-    if not incidents_weekend:
-        raise HTTPException(status_code=404, detail="Incidents_weekend not found")
-    return incidents_weekend
-
-
-# Get incidents_weekend by year
-@router.get("/incidents/weekend/{year}")
-async def get_incidents_weekend_by_year(state: str, db: Session = Depends(get_db)):
-    """Get all incidents_weekend by year."""
-    incidents_weekend = CRUDIncidentsWeekend(IncidentWeekend).get_multi_by_year(
-        db, state=state
-    )
-    if not incidents_weekend:
-        raise HTTPException(status_code=404, detail="Incidents_weekend not found")
-    return incidents_weekend
-
-
-# Get incidents_weekend by state and year
-@router.get("/incidents/weekend/{state}/{year}")
-async def get_incidents_weekend_by_state_and_year(
-    state: str, year: int, db: Session = Depends(get_db)
+# Get incidents_weekend by state and/or year
+@router.get("/incidents/weekend/", response_model=None)
+async def get_incidents_weekend(
+    state: str | None = None,
+    year: int | None = None,
+    db: Session = Depends(get_db)
 ):
-    """Get all incidents_weekend by state and year."""
-    incidents_weekend = CRUDIncidentsWeekend(
-        IncidentWeekend
-    ).get_multi_by_state_and_year(db, state=state, year=year)
+    """Get all incidents_weekend by state and/or year."""
+    if state and year:
+        incidents_weekend = CRUDIncidentsWeekend(
+            IncidentWeekend
+        ).get_multi_by_state_and_year(db, state=state, year=year)
+    elif state:
+        incidents_weekend = CRUDIncidentsWeekend(
+            IncidentWeekend
+        ).get_multi_by_state(db, state=state)
+    elif year:
+        incidents_weekend = CRUDIncidentsWeekend(
+            IncidentWeekend
+        ).get_multi_by_year(db, year=year)
+    else:
+        incidents_weekend = CRUDIncidentsWeekend(IncidentWeekend).get_multi(db)
     if not incidents_weekend:
         raise HTTPException(status_code=404, detail="Incidents_weekend not found")
     return incidents_weekend
