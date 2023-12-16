@@ -50,5 +50,5 @@ class IncidentCombinedCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentCombinedUpdate(IncidentCombined):
+class IncidentCombinedUpdate(IncidentCombinedCreate):
     pass

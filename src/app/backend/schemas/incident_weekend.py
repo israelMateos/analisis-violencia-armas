@@ -17,5 +17,5 @@ class IncidentWeekendCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentWeekendUpdate(IncidentWeekend):
+class IncidentWeekendUpdate(IncidentWeekendCreate):
     pass

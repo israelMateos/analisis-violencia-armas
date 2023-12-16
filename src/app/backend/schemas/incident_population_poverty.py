@@ -17,5 +17,5 @@ class IncidentPopulationPovertyCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentPopulationPovertyUpdate(IncidentPopulationPoverty):
+class IncidentPopulationPovertyUpdate(IncidentPopulationPovertyCreate):
     pass

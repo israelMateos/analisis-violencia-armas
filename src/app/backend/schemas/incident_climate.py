@@ -21,5 +21,5 @@ class IncidentClimateCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentClimateUpdate(IncidentClimate):
+class IncidentClimateUpdate(IncidentClimateCreate):
     pass

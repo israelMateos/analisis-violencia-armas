@@ -45,5 +45,5 @@ class IncidentFirearmLawsCreate(IncidentBase):
 
 
 # Properties to receive on item update
-class IncidentFirearmLawsUpdate(IncidentFirearmLaws):
+class IncidentFirearmLawsUpdate(IncidentFirearmLawsCreate):
     pass
