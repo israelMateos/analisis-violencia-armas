@@ -1,0 +1,2858 @@
+[
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0740794250133913,
+        "state": "Alabama",
+        "id": 1,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0782328797184432,
+        "state": "Alabama",
+        "id": 2,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0568692566893108,
+        "state": "Alabama",
+        "id": 3,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0618257515383792,
+        "state": "Alabama",
+        "id": 4,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0717135180357617,
+        "state": "Alabama",
+        "id": 5,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0713348395474895,
+        "state": "Alabama",
+        "id": 6,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.078884996187046,
+        "state": "Alabama",
+        "id": 7,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0773414879025193,
+        "state": "Alabama",
+        "id": 8,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1483062929591618,
+        "state": "Alaska",
+        "id": 9,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1757636190240469,
+        "state": "Alaska",
+        "id": 10,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.2115950896328027,
+        "state": "Alaska",
+        "id": 11,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.2234429549563066,
+        "state": "Alaska",
+        "id": 12,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.2253213518583342,
+        "state": "Alaska",
+        "id": 13,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.2343362249411968,
+        "state": "Alaska",
+        "id": 14,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.2068204334552733,
+        "state": "Alaska",
+        "id": 15,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1916872310073265,
+        "state": "Alaska",
+        "id": 16,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0284271605044512,
+        "state": "Arizona",
+        "id": 17,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0285580977285929,
+        "state": "Arizona",
+        "id": 18,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0259522573226073,
+        "state": "Arizona",
+        "id": 19,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0277822241850989,
+        "state": "Arizona",
+        "id": 20,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0263353699435377,
+        "state": "Arizona",
+        "id": 21,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0288139929970471,
+        "state": "Arizona",
+        "id": 22,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0262199982667567,
+        "state": "Arizona",
+        "id": 23,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0275578402322688,
+        "state": "Arizona",
+        "id": 24,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.064534783405765,
+        "state": "Arkansas",
+        "id": 25,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0583262754219607,
+        "state": "Arkansas",
+        "id": 26,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0627858136157196,
+        "state": "Arkansas",
+        "id": 27,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0658498103804559,
+        "state": "Arkansas",
+        "id": 28,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0732925638699326,
+        "state": "Arkansas",
+        "id": 29,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0765535673181969,
+        "state": "Arkansas",
+        "id": 30,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0798768523000106,
+        "state": "Arkansas",
+        "id": 31,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0821601345699708,
+        "state": "Arkansas",
+        "id": 32,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0235958398329448,
+        "state": "California",
+        "id": 33,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.027727364408076,
+        "state": "California",
+        "id": 34,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0211489791708941,
+        "state": "California",
+        "id": 35,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0210254454140548,
+        "state": "California",
+        "id": 36,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0227820621136779,
+        "state": "California",
+        "id": 37,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0251668838866615,
+        "state": "California",
+        "id": 38,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0289978741137584,
+        "state": "California",
+        "id": 39,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0325699622601127,
+        "state": "California",
+        "id": 40,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0383017129558648,
+        "state": "Colorado",
+        "id": 41,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0384354992208374,
+        "state": "Colorado",
+        "id": 42,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0469531961054935,
+        "state": "Colorado",
+        "id": 43,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0415316976377978,
+        "state": "Colorado",
+        "id": 44,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0414820110390692,
+        "state": "Colorado",
+        "id": 45,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.047559240833774,
+        "state": "Colorado",
+        "id": 46,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0421328028718415,
+        "state": "Colorado",
+        "id": 47,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0430936725706028,
+        "state": "Colorado",
+        "id": 48,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0581828873437029,
+        "state": "Connecticut",
+        "id": 49,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0601609559429843,
+        "state": "Connecticut",
+        "id": 50,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0624974691442409,
+        "state": "Connecticut",
+        "id": 51,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0698436335336802,
+        "state": "Connecticut",
+        "id": 52,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0696074918681929,
+        "state": "Connecticut",
+        "id": 53,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0674196778165147,
+        "state": "Connecticut",
+        "id": 54,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0690049952371027,
+        "state": "Connecticut",
+        "id": 55,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0666173223946594,
+        "state": "Connecticut",
+        "id": 56,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1983365307603642,
+        "state": "Delaware",
+        "id": 57,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.2098841975430067,
+        "state": "Delaware",
+        "id": 58,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1800586022452217,
+        "state": "Delaware",
+        "id": 59,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1810039929480844,
+        "state": "Delaware",
+        "id": 60,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.151569161704533,
+        "state": "Delaware",
+        "id": 61,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.162864405514742,
+        "state": "Delaware",
+        "id": 62,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1637161720024817,
+        "state": "Delaware",
+        "id": 63,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1675518463889981,
+        "state": "Delaware",
+        "id": 64,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.4187630457508028,
+        "state": "District of Columbia",
+        "id": 65,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.3850904382349544,
+        "state": "District of Columbia",
+        "id": 66,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.3151695248386488,
+        "state": "District of Columbia",
+        "id": 67,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.3178363438949758,
+        "state": "District of Columbia",
+        "id": 68,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.2873603280648759,
+        "state": "District of Columbia",
+        "id": 69,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.2813553895421845,
+        "state": "District of Columbia",
+        "id": 70,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.5467020605032548,
+        "state": "District of Columbia",
+        "id": 71,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.4539663170641398,
+        "state": "District of Columbia",
+        "id": 72,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0401754299746096,
+        "state": "Florida",
+        "id": 73,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0405043715980664,
+        "state": "Florida",
+        "id": 74,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0337054000953556,
+        "state": "Florida",
+        "id": 75,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.034114584794424,
+        "state": "Florida",
+        "id": 76,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.051180109013147,
+        "state": "Florida",
+        "id": 77,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0543333858717769,
+        "state": "Florida",
+        "id": 78,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0508511183651008,
+        "state": "Florida",
+        "id": 79,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0507455238660207,
+        "state": "Florida",
+        "id": 80,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0533067018169343,
+        "state": "Georgia",
+        "id": 81,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0538683537206077,
+        "state": "Georgia",
+        "id": 82,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0704038952703017,
+        "state": "Georgia",
+        "id": 83,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0714178771008069,
+        "state": "Georgia",
+        "id": 84,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0432227087021101,
+        "state": "Georgia",
+        "id": 85,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0432146244710735,
+        "state": "Georgia",
+        "id": 86,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.049183407622618,
+        "state": "Georgia",
+        "id": 87,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0499688585945217,
+        "state": "Georgia",
+        "id": 88,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0798163257589768,
+        "state": "Hawaii",
+        "id": 89,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0785493999532788,
+        "state": "Hawaii",
+        "id": 90,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0773530081881675,
+        "state": "Hawaii",
+        "id": 91,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.075343839144319,
+        "state": "Hawaii",
+        "id": 92,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0742526228338023,
+        "state": "Hawaii",
+        "id": 93,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0862149466865629,
+        "state": "Hawaii",
+        "id": 94,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0810061657032963,
+        "state": "Hawaii",
+        "id": 95,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0702053436095234,
+        "state": "Hawaii",
+        "id": 96,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0701930668299837,
+        "state": "Idaho",
+        "id": 97,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0681198538856382,
+        "state": "Idaho",
+        "id": 98,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0782326171667194,
+        "state": "Idaho",
+        "id": 99,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0683322115203108,
+        "state": "Idaho",
+        "id": 100,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0710542385697984,
+        "state": "Idaho",
+        "id": 101,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0742995042737074,
+        "state": "Idaho",
+        "id": 102,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0719534414137255,
+        "state": "Idaho",
+        "id": 103,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0654939847413569,
+        "state": "Idaho",
+        "id": 104,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0589137158189584,
+        "state": "Illinois",
+        "id": 105,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0722394921375044,
+        "state": "Illinois",
+        "id": 106,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0648859615399011,
+        "state": "Illinois",
+        "id": 107,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0841978095420902,
+        "state": "Illinois",
+        "id": 108,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0945298954499356,
+        "state": "Illinois",
+        "id": 109,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1242055769143462,
+        "state": "Illinois",
+        "id": 110,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0966245914530686,
+        "state": "Illinois",
+        "id": 111,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.122673147147692,
+        "state": "Illinois",
+        "id": 112,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0489934348123301,
+        "state": "Indiana",
+        "id": 113,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.050199859137072,
+        "state": "Indiana",
+        "id": 114,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0514494988364847,
+        "state": "Indiana",
+        "id": 115,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0581551428601557,
+        "state": "Indiana",
+        "id": 116,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0597585960657494,
+        "state": "Indiana",
+        "id": 117,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0611881207221444,
+        "state": "Indiana",
+        "id": 118,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0589359271549537,
+        "state": "Indiana",
+        "id": 119,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0586192084466301,
+        "state": "Indiana",
+        "id": 120,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.062242056477546,
+        "state": "Iowa",
+        "id": 121,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0631309747362941,
+        "state": "Iowa",
+        "id": 122,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0642514853729216,
+        "state": "Iowa",
+        "id": 123,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0732947554598585,
+        "state": "Iowa",
+        "id": 124,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0640211375941365,
+        "state": "Iowa",
+        "id": 125,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0761524388076463,
+        "state": "Iowa",
+        "id": 126,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0594704105593362,
+        "state": "Iowa",
+        "id": 127,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.066556607117795,
+        "state": "Iowa",
+        "id": 128,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0577116866540225,
+        "state": "Kansas",
+        "id": 129,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0634578719052888,
+        "state": "Kansas",
+        "id": 130,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0593595540300175,
+        "state": "Kansas",
+        "id": 131,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0606634310545041,
+        "state": "Kansas",
+        "id": 132,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0656320902526562,
+        "state": "Kansas",
+        "id": 133,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0682844673568097,
+        "state": "Kansas",
+        "id": 134,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0648601183801362,
+        "state": "Kansas",
+        "id": 135,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0683636484226534,
+        "state": "Kansas",
+        "id": 136,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0635884825567631,
+        "state": "Kentucky",
+        "id": 137,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0645278578672608,
+        "state": "Kentucky",
+        "id": 138,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0582633842627099,
+        "state": "Kentucky",
+        "id": 139,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0608296947906561,
+        "state": "Kentucky",
+        "id": 140,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0625466375637255,
+        "state": "Kentucky",
+        "id": 141,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0657559186833432,
+        "state": "Kentucky",
+        "id": 142,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0648857815587221,
+        "state": "Kentucky",
+        "id": 143,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0652757201498202,
+        "state": "Kentucky",
+        "id": 144,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.105654630725457,
+        "state": "Louisiana",
+        "id": 145,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1160278731899136,
+        "state": "Louisiana",
+        "id": 146,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0967696507225778,
+        "state": "Louisiana",
+        "id": 147,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0946665325543305,
+        "state": "Louisiana",
+        "id": 148,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1157112270836009,
+        "state": "Louisiana",
+        "id": 149,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1144851362940409,
+        "state": "Louisiana",
+        "id": 150,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1104428839004564,
+        "state": "Louisiana",
+        "id": 151,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1093401244498487,
+        "state": "Louisiana",
+        "id": 152,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0921303626205007,
+        "state": "Maine",
+        "id": 153,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1013772288810651,
+        "state": "Maine",
+        "id": 154,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.105958568972643,
+        "state": "Maine",
+        "id": 155,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1044790186003074,
+        "state": "Maine",
+        "id": 156,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0999279016836067,
+        "state": "Maine",
+        "id": 157,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1111681139803668,
+        "state": "Maine",
+        "id": 158,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0952969597301818,
+        "state": "Maine",
+        "id": 159,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1062934134537072,
+        "state": "Maine",
+        "id": 160,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0603760840898172,
+        "state": "Maryland",
+        "id": 161,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0576030876385832,
+        "state": "Maryland",
+        "id": 162,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0581316874960331,
+        "state": "Maryland",
+        "id": 163,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0644161751744077,
+        "state": "Maryland",
+        "id": 164,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0602904957534446,
+        "state": "Maryland",
+        "id": 165,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0550348793264572,
+        "state": "Maryland",
+        "id": 166,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0704706558732287,
+        "state": "Maryland",
+        "id": 167,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0699830453540782,
+        "state": "Maryland",
+        "id": 168,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.040056522073678,
+        "state": "Massachusetts",
+        "id": 169,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0468521415833738,
+        "state": "Massachusetts",
+        "id": 170,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0534787195168923,
+        "state": "Massachusetts",
+        "id": 171,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0582727525992561,
+        "state": "Massachusetts",
+        "id": 172,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0594958115439119,
+        "state": "Massachusetts",
+        "id": 173,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.069575696838593,
+        "state": "Massachusetts",
+        "id": 174,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0677232097275671,
+        "state": "Massachusetts",
+        "id": 175,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0767473443039274,
+        "state": "Massachusetts",
+        "id": 176,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0389935475346651,
+        "state": "Michigan",
+        "id": 177,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0367627524297774,
+        "state": "Michigan",
+        "id": 178,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0343497838363752,
+        "state": "Michigan",
+        "id": 179,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0352406407151232,
+        "state": "Michigan",
+        "id": 180,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0326209193616676,
+        "state": "Michigan",
+        "id": 181,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0412241751385576,
+        "state": "Michigan",
+        "id": 182,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0339779929078453,
+        "state": "Michigan",
+        "id": 183,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0413733723712875,
+        "state": "Michigan",
+        "id": 184,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0333341925650262,
+        "state": "Minnesota",
+        "id": 185,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0335369382832279,
+        "state": "Minnesota",
+        "id": 186,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.028882234422078,
+        "state": "Minnesota",
+        "id": 187,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.029642293222659,
+        "state": "Minnesota",
+        "id": 188,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.034461597467701,
+        "state": "Minnesota",
+        "id": 189,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.03452390092075,
+        "state": "Minnesota",
+        "id": 190,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0441804178675582,
+        "state": "Minnesota",
+        "id": 191,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0501794472789637,
+        "state": "Minnesota",
+        "id": 192,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0788437851579623,
+        "state": "Mississippi",
+        "id": 193,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0837911365858715,
+        "state": "Mississippi",
+        "id": 194,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0680891958010222,
+        "state": "Mississippi",
+        "id": 195,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0771079199392249,
+        "state": "Mississippi",
+        "id": 196,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0874862559972562,
+        "state": "Mississippi",
+        "id": 197,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0694018487172865,
+        "state": "Mississippi",
+        "id": 198,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0973674528635932,
+        "state": "Mississippi",
+        "id": 199,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0936169799996909,
+        "state": "Mississippi",
+        "id": 200,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0575784784839944,
+        "state": "Missouri",
+        "id": 201,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0645469042989469,
+        "state": "Missouri",
+        "id": 202,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.070877666298929,
+        "state": "Missouri",
+        "id": 203,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0757928997454567,
+        "state": "Missouri",
+        "id": 204,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0672177217383129,
+        "state": "Missouri",
+        "id": 205,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0682893141863625,
+        "state": "Missouri",
+        "id": 206,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0708306953772976,
+        "state": "Missouri",
+        "id": 207,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0829693870254437,
+        "state": "Missouri",
+        "id": 208,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1116606571904657,
+        "state": "Montana",
+        "id": 209,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1264023731678587,
+        "state": "Montana",
+        "id": 210,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1080981150084098,
+        "state": "Montana",
+        "id": 211,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1078251399705098,
+        "state": "Montana",
+        "id": 212,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1135425818307937,
+        "state": "Montana",
+        "id": 213,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1299831366660218,
+        "state": "Montana",
+        "id": 214,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1146714672292863,
+        "state": "Montana",
+        "id": 215,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1181248936554965,
+        "state": "Montana",
+        "id": 216,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0903344568918588,
+        "state": "Nebraska",
+        "id": 217,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0941420209336653,
+        "state": "Nebraska",
+        "id": 218,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0814844092330715,
+        "state": "Nebraska",
+        "id": 219,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0959291375237849,
+        "state": "Nebraska",
+        "id": 220,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0834063092202171,
+        "state": "Nebraska",
+        "id": 221,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0886926245933295,
+        "state": "Nebraska",
+        "id": 222,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0931295972952381,
+        "state": "Nebraska",
+        "id": 223,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1029763857232466,
+        "state": "Nebraska",
+        "id": 224,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0573845488788128,
+        "state": "Nevada",
+        "id": 225,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0589605981549248,
+        "state": "Nevada",
+        "id": 226,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0606958499762388,
+        "state": "Nevada",
+        "id": 227,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0627847331247717,
+        "state": "Nevada",
+        "id": 228,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0638527484217666,
+        "state": "Nevada",
+        "id": 229,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0661021348492364,
+        "state": "Nevada",
+        "id": 230,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0553575887649662,
+        "state": "Nevada",
+        "id": 231,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0587988052384307,
+        "state": "Nevada",
+        "id": 232,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1051395823632892,
+        "state": "New Hampshire",
+        "id": 233,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1148929563867773,
+        "state": "New Hampshire",
+        "id": 234,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0955427630699827,
+        "state": "New Hampshire",
+        "id": 235,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0947855476983325,
+        "state": "New Hampshire",
+        "id": 236,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1047636643480217,
+        "state": "New Hampshire",
+        "id": 237,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1166676278860988,
+        "state": "New Hampshire",
+        "id": 238,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0963136077498335,
+        "state": "New Hampshire",
+        "id": 239,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0942204612984358,
+        "state": "New Hampshire",
+        "id": 240,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0483532995008829,
+        "state": "New Jersey",
+        "id": 241,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0458143497795529,
+        "state": "New Jersey",
+        "id": 242,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0337810879964737,
+        "state": "New Jersey",
+        "id": 243,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0387481954707447,
+        "state": "New Jersey",
+        "id": 244,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0351070504958073,
+        "state": "New Jersey",
+        "id": 245,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0436825112247144,
+        "state": "New Jersey",
+        "id": 246,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0400201451236702,
+        "state": "New Jersey",
+        "id": 247,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0421761552134958,
+        "state": "New Jersey",
+        "id": 248,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0714226214425298,
+        "state": "New Mexico",
+        "id": 249,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0784537407873341,
+        "state": "New Mexico",
+        "id": 250,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0791582481256155,
+        "state": "New Mexico",
+        "id": 251,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0828108066400865,
+        "state": "New Mexico",
+        "id": 252,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0744670786695427,
+        "state": "New Mexico",
+        "id": 253,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0811314475777119,
+        "state": "New Mexico",
+        "id": 254,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0799665392185461,
+        "state": "New Mexico",
+        "id": 255,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0956121664569573,
+        "state": "New Mexico",
+        "id": 256,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0241412048791899,
+        "state": "New York",
+        "id": 257,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0297987615356779,
+        "state": "New York",
+        "id": 258,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0365971632031304,
+        "state": "New York",
+        "id": 259,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0448611423481207,
+        "state": "New York",
+        "id": 260,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0313828968712873,
+        "state": "New York",
+        "id": 261,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0386124745049737,
+        "state": "New York",
+        "id": 262,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0253642601277863,
+        "state": "New York",
+        "id": 263,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0321010665187658,
+        "state": "New York",
+        "id": 264,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0551578255019359,
+        "state": "North Carolina",
+        "id": 265,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0600144252979389,
+        "state": "North Carolina",
+        "id": 266,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0464545524234009,
+        "state": "North Carolina",
+        "id": 267,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0532928877888418,
+        "state": "North Carolina",
+        "id": 268,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0518512510097169,
+        "state": "North Carolina",
+        "id": 269,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0563656230323028,
+        "state": "North Carolina",
+        "id": 270,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0524748054910484,
+        "state": "North Carolina",
+        "id": 271,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0589891450373482,
+        "state": "North Carolina",
+        "id": 272,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1710790277662305,
+        "state": "North Dakota",
+        "id": 273,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1664322027326688,
+        "state": "North Dakota",
+        "id": 274,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1661876489540737,
+        "state": "North Dakota",
+        "id": 275,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1823447814912753,
+        "state": "North Dakota",
+        "id": 276,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1566496448752551,
+        "state": "North Dakota",
+        "id": 277,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1745776530129484,
+        "state": "North Dakota",
+        "id": 278,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1539853392710963,
+        "state": "North Dakota",
+        "id": 279,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1580980243643583,
+        "state": "North Dakota",
+        "id": 280,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0525840305719797,
+        "state": "Ohio",
+        "id": 281,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0564358030723618,
+        "state": "Ohio",
+        "id": 282,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0465944896287085,
+        "state": "Ohio",
+        "id": 283,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0499747084101327,
+        "state": "Ohio",
+        "id": 284,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0515713356202355,
+        "state": "Ohio",
+        "id": 285,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0612307286411685,
+        "state": "Ohio",
+        "id": 286,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0595374686642933,
+        "state": "Ohio",
+        "id": 287,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0607712434396768,
+        "state": "Ohio",
+        "id": 288,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0560023278918731,
+        "state": "Oklahoma",
+        "id": 289,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0557198386831239,
+        "state": "Oklahoma",
+        "id": 290,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0647994202157138,
+        "state": "Oklahoma",
+        "id": 291,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0602520924812778,
+        "state": "Oklahoma",
+        "id": 292,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0653337019040001,
+        "state": "Oklahoma",
+        "id": 293,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0692094299830509,
+        "state": "Oklahoma",
+        "id": 294,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0632162885789529,
+        "state": "Oklahoma",
+        "id": 295,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0593524746759948,
+        "state": "Oklahoma",
+        "id": 296,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0403709688326027,
+        "state": "Oregon",
+        "id": 297,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0416874134684485,
+        "state": "Oregon",
+        "id": 298,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0539747250444079,
+        "state": "Oregon",
+        "id": 299,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0606799756858772,
+        "state": "Oregon",
+        "id": 300,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0451484518872689,
+        "state": "Oregon",
+        "id": 301,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0473907818759394,
+        "state": "Oregon",
+        "id": 302,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0441297518132415,
+        "state": "Oregon",
+        "id": 303,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0464792524884835,
+        "state": "Oregon",
+        "id": 304,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0462152924314567,
+        "state": "Pennsylvania",
+        "id": 305,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0479704819909818,
+        "state": "Pennsylvania",
+        "id": 306,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.03394527035409,
+        "state": "Pennsylvania",
+        "id": 307,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0417667461820967,
+        "state": "Pennsylvania",
+        "id": 308,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0424566290188802,
+        "state": "Pennsylvania",
+        "id": 309,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0477595882169794,
+        "state": "Pennsylvania",
+        "id": 310,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0417978674902593,
+        "state": "Pennsylvania",
+        "id": 311,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0492739112224561,
+        "state": "Pennsylvania",
+        "id": 312,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1387504810016674,
+        "state": "Rhode Island",
+        "id": 313,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1495305935606942,
+        "state": "Rhode Island",
+        "id": 314,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1336197214291839,
+        "state": "Rhode Island",
+        "id": 315,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1495123281636123,
+        "state": "Rhode Island",
+        "id": 316,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1280260772420288,
+        "state": "Rhode Island",
+        "id": 317,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1351828144791609,
+        "state": "Rhode Island",
+        "id": 318,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1256153142613043,
+        "state": "Rhode Island",
+        "id": 319,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1326168235807868,
+        "state": "Rhode Island",
+        "id": 320,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0905459312546233,
+        "state": "South Carolina",
+        "id": 321,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0971650254750467,
+        "state": "South Carolina",
+        "id": 322,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0888244719217229,
+        "state": "South Carolina",
+        "id": 323,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1016135892647814,
+        "state": "South Carolina",
+        "id": 324,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0785342056947841,
+        "state": "South Carolina",
+        "id": 325,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0820623983652252,
+        "state": "South Carolina",
+        "id": 326,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0911869304223617,
+        "state": "South Carolina",
+        "id": 327,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0895221213260865,
+        "state": "South Carolina",
+        "id": 328,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1432310304107169,
+        "state": "South Dakota",
+        "id": 329,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1373956921347247,
+        "state": "South Dakota",
+        "id": 330,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1355867689993425,
+        "state": "South Dakota",
+        "id": 331,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1498850100938186,
+        "state": "South Dakota",
+        "id": 332,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1376872307771585,
+        "state": "South Dakota",
+        "id": 333,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1412231342903095,
+        "state": "South Dakota",
+        "id": 334,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1432060746871233,
+        "state": "South Dakota",
+        "id": 335,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1803787153505894,
+        "state": "South Dakota",
+        "id": 336,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0643503871612601,
+        "state": "Tennessee",
+        "id": 337,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0609962233346728,
+        "state": "Tennessee",
+        "id": 338,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0709194058816744,
+        "state": "Tennessee",
+        "id": 339,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0681244161268996,
+        "state": "Tennessee",
+        "id": 340,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0805197607489509,
+        "state": "Tennessee",
+        "id": 341,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0774032956500331,
+        "state": "Tennessee",
+        "id": 342,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0736010005764292,
+        "state": "Tennessee",
+        "id": 343,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0719240913082446,
+        "state": "Tennessee",
+        "id": 344,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0303249595564743,
+        "state": "Texas",
+        "id": 345,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0272083068457078,
+        "state": "Texas",
+        "id": 346,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0311184751434891,
+        "state": "Texas",
+        "id": 347,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0291926262153625,
+        "state": "Texas",
+        "id": 348,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0331094502527823,
+        "state": "Texas",
+        "id": 349,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0322414122311737,
+        "state": "Texas",
+        "id": 350,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0246572421366423,
+        "state": "Texas",
+        "id": 351,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0276001005875568,
+        "state": "Texas",
+        "id": 352,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0432523869819039,
+        "state": "Utah",
+        "id": 353,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0483031357833533,
+        "state": "Utah",
+        "id": 354,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0505281702933484,
+        "state": "Utah",
+        "id": 355,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0506094706478027,
+        "state": "Utah",
+        "id": 356,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0436157214339125,
+        "state": "Utah",
+        "id": 357,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0533537556419979,
+        "state": "Utah",
+        "id": 358,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0426018389119267,
+        "state": "Utah",
+        "id": 359,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0443399347703126,
+        "state": "Utah",
+        "id": 360,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.1991154963234466,
+        "state": "Vermont",
+        "id": 361,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.189026186524643,
+        "state": "Vermont",
+        "id": 362,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1831251177564048,
+        "state": "Vermont",
+        "id": 363,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.1845516035811869,
+        "state": "Vermont",
+        "id": 364,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.1760646021268541,
+        "state": "Vermont",
+        "id": 365,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.2052410219078756,
+        "state": "Vermont",
+        "id": 366,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1718877304350353,
+        "state": "Vermont",
+        "id": 367,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.1601681124508284,
+        "state": "Vermont",
+        "id": 368,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.040781459716006,
+        "state": "Virginia",
+        "id": 369,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0434104942364276,
+        "state": "Virginia",
+        "id": 370,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0413786109415571,
+        "state": "Virginia",
+        "id": 371,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0474741463771587,
+        "state": "Virginia",
+        "id": 372,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0474689320205952,
+        "state": "Virginia",
+        "id": 373,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.052706735297894,
+        "state": "Virginia",
+        "id": 374,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0443543411790799,
+        "state": "Virginia",
+        "id": 375,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0517066537363221,
+        "state": "Virginia",
+        "id": 376,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0313417917159933,
+        "state": "Washington",
+        "id": 377,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0262560355860453,
+        "state": "Washington",
+        "id": 378,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0381596223011301,
+        "state": "Washington",
+        "id": 379,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0355187922096834,
+        "state": "Washington",
+        "id": 380,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0311673239044841,
+        "state": "Washington",
+        "id": 381,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0340451603417911,
+        "state": "Washington",
+        "id": 382,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0331730429700086,
+        "state": "Washington",
+        "id": 383,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0358768076529536,
+        "state": "Washington",
+        "id": 384,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0870544725100696,
+        "state": "West Virginia",
+        "id": 385,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.082035707122905,
+        "state": "West Virginia",
+        "id": 386,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0833825201497408,
+        "state": "West Virginia",
+        "id": 387,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0775533470085735,
+        "state": "West Virginia",
+        "id": 388,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0923722981465201,
+        "state": "West Virginia",
+        "id": 389,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.09133767260725,
+        "state": "West Virginia",
+        "id": 390,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0836669161913145,
+        "state": "West Virginia",
+        "id": 391,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0889037456926135,
+        "state": "West Virginia",
+        "id": 392,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0525315898195265,
+        "state": "Wisconsin",
+        "id": 393,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.0572311981025322,
+        "state": "Wisconsin",
+        "id": 394,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0503179242467585,
+        "state": "Wisconsin",
+        "id": 395,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.0591917291275382,
+        "state": "Wisconsin",
+        "id": 396,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0448751624126167,
+        "state": "Wisconsin",
+        "id": 397,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.0483604116992584,
+        "state": "Wisconsin",
+        "id": 398,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0648004419150348,
+        "state": "Wisconsin",
+        "id": 399,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.0729203210781522,
+        "state": "Wisconsin",
+        "id": 400,
+        "is_weekend": 1
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.2059976207274805,
+        "state": "Wyoming",
+        "id": 401,
+        "is_weekend": 0
+    },
+    {
+        "year": 2014,
+        "n_incidents_per_day": 0.2043627189756752,
+        "state": "Wyoming",
+        "id": 402,
+        "is_weekend": 1
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.2397923746824159,
+        "state": "Wyoming",
+        "id": 403,
+        "is_weekend": 0
+    },
+    {
+        "year": 2015,
+        "n_incidents_per_day": 0.2352710369779663,
+        "state": "Wyoming",
+        "id": 404,
+        "is_weekend": 1
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.2139623255137235,
+        "state": "Wyoming",
+        "id": 405,
+        "is_weekend": 0
+    },
+    {
+        "year": 2016,
+        "n_incidents_per_day": 0.2567547906164683,
+        "state": "Wyoming",
+        "id": 406,
+        "is_weekend": 1
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.2431045163253319,
+        "state": "Wyoming",
+        "id": 407,
+        "is_weekend": 0
+    },
+    {
+        "year": 2017,
+        "n_incidents_per_day": 0.207278587603704,
+        "state": "Wyoming",
+        "id": 408,
+        "is_weekend": 1
+    }
+]
