@@ -21,7 +21,7 @@ class CRUDIncidentsClimate(
     # GET
     def get(self, db: Session, *, id: int) -> Optional[IncidentClimate]:
         """Get incidents_climate by id."""
-        return db.query(self.model).filter(self.model.id == id).first()
+        return super().get(db, id=id)
 
     def get_multi(self, db: Session) -> Optional[IncidentClimate]:
         """Get all incidents_climate."""

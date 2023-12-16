@@ -19,7 +19,7 @@ class CRUDIncidentsFirearmLaws(
     # GET
     def get(self, db: Session, *, id: int) -> Optional[IncidentFirearmLaws]:
         """Get incidents_firearm_laws by id."""
-        return db.query(self.model).filter(self.model.id == id).first()
+        return super().get(db, id=id)
 
     def get_multi(self, db: Session) -> Optional[IncidentFirearmLaws]:
         """Get all incidents_firearm_laws."""

@@ -23,7 +23,7 @@ class CRUDIncidentsPopulationPoverty(
     # GET
     def get(self, db: Session, *, id: int) -> Optional[IncidentPopulationPoverty]:
         """Get incidents_population_poverty by id."""
-        return db.query(self.model).filter(self.model.id == id).first()
+        return super().get(db, id=id)
 
     def get_multi(self, db: Session) -> Optional[IncidentPopulationPoverty]:
         """Get all incidents_population_poverty."""

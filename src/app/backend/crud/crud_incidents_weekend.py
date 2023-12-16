@@ -19,7 +19,7 @@ class CRUDIncidentsWeekend(
     # GET
     def get(self, db: Session, *, id: int) -> Optional[IncidentWeekend]:
         """Get incidents_weekend by id."""
-        return db.query(self.model).filter(self.model.id == id).first()
+        return super().get(db, id=id)
 
     def get_multi(self, db: Session) -> Optional[IncidentWeekend]:
         """Get all incidents_weekend."""
@@ -44,7 +44,6 @@ class CRUDIncidentsWeekend(
             is_weekend=obj_in.is_weekend,
             n_incidents_per_day=obj_in.n_incidents_per_day,
         )
-        # Log to console db_obj
         db.add(db_obj)
         db.commit()
         db.refresh(db_obj)
