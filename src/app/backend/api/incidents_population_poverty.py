@@ -7,7 +7,7 @@ from crud.crud_incidents_population_poverty import (  # pylint: disable=import-e
 )
 from fastapi import APIRouter, Depends, HTTPException
 from models import IncidentPopulationPoverty  # pylint: disable=import-error
-from schemas import IncidentPopulationPovertyCreate  # pylint: disable=import-error
+from schemas import IncidentPopulationPovertyCreate, IncidentPopulationPovertyUpdate  # pylint: disable=import-error
 from sqlalchemy.orm import Session
 
 from db import get_db  # pylint: disable=import-error
@@ -77,4 +77,23 @@ async def create_incidents_population_poverty(
     """Create incidents_population_poverty."""
     return CRUDIncidentsPopulationPoverty(IncidentPopulationPoverty).create(
         db, obj_in=incidents_population_poverty
+    )
+
+# Update incidents_population_poverty
+@router.put("/incidents/population_poverty/{id}")
+async def update_incidents_population_poverty(
+    id: int,
+    incidents_population_poverty: IncidentPopulationPovertyUpdate,
+    db: Session = Depends(get_db),
+):
+    """Update incidents_population_poverty."""
+    db_incidents_population_poverty = CRUDIncidentsPopulationPoverty(
+        IncidentPopulationPoverty
+    ).get(db, id=id)
+    if not db_incidents_population_poverty:
+        raise HTTPException(
+            status_code=404, detail="Incidents_population_poverty not found"
+        )
+    return CRUDIncidentsPopulationPoverty(IncidentPopulationPoverty).update(
+        db, db_obj=db_incidents_population_poverty, obj_in=incidents_population_poverty
     )

@@ -7,7 +7,7 @@ from crud.crud_incidents_weekend import (  # pylint: disable=import-error
 )
 from fastapi import APIRouter, Depends, HTTPException
 from models import IncidentWeekend  # pylint: disable=import-error
-from schemas import IncidentWeekendCreate  # pylint: disable=import-error
+from schemas import IncidentWeekendCreate, IncidentWeekendUpdate  # pylint: disable=import-error
 from sqlalchemy.orm import Session
 
 from db import get_db  # pylint: disable=import-error
@@ -61,3 +61,14 @@ async def create_incidents_weekend(
 ):
     """Create incidents_weekend."""
     return CRUDIncidentsWeekend(IncidentWeekendCreate).create(db, obj_in=incidents_weekend)
+
+# Update incidents_weekend
+@router.put("/incidents/weekend/{id}")
+async def update_incidents_weekend(
+    id: int, incidents_weekend: IncidentWeekendUpdate, db: Session = Depends(get_db)
+):
+    """Update incidents_weekend."""
+    db_incidents_weekend = CRUDIncidentsWeekend(IncidentWeekend).get(db, id=id)
+    if not db_incidents_weekend:
+        raise HTTPException(status_code=404, detail="Incidents_weekend not found")
+    return CRUDIncidentsWeekend(IncidentWeekend).update(db, db_obj=db_incidents_weekend, obj_in=incidents_weekend)

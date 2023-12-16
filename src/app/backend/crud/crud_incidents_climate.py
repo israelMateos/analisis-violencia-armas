@@ -52,3 +52,12 @@ class CRUDIncidentsClimate(
         db.commit()
         db.refresh(db_obj)
         return db_obj
+
+    # PUT
+    def update(self, db: Session, *, db_obj: IncidentClimate, obj_in: IncidentClimateUpdate) -> IncidentClimate:
+        """Update incidents_climate."""
+        if isinstance(obj_in, dict):
+            update_data = obj_in
+        else:
+            update_data = obj_in.dict(exclude_unset=True)
+        return super().update(db, db_obj=db_obj, obj_in=update_data)
