@@ -44,4 +44,4 @@ app.include_router(incidents_combined.router)
 @app.get("/")
 async def root():
     """Root endpoint."""
-    return {"message": "Hello World"}
+    return {"message": "Bienvenidos a la API de datos de violencia armada en EEUU. Para acceder a los datos, visite los endpoints de cada tabla."}
