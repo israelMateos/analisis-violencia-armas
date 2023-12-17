@@ -1,5 +1,6 @@
 //URL de donde se obtienen los datos
-var urlBase = "http://127.0.0.1:5500/src/app/frontend/examples/";
+var urlBase = "http://172.25.0.3:8000/";
+
 
 //Inicilizamos los array para los graficos
 var arrMediaIncidentesClima = [];
@@ -18,11 +19,12 @@ var arrMediaLeyes = [];
  * relacionados con el clima                        *
  * **************************************************/
 function fncCargarGraficosClima(strEstado, strAnio){
-    strUrlFinal = urlBase+"incidents_climate.json";
-    if(strEstado != ""){
+    strUrlFinal = urlBase+"incidents/climate/";
+    if(strEstado != "" && strAnio != ""){
+        strUrlFinal += "?state="+strEstado+"&year="+strAnio;
+    }else if(strEstado != ""){
         strUrlFinal += "?state="+strEstado;
-    }
-    if(strAnio != ""){
+    }else if(strAnio != ""){
         strUrlFinal += "?year="+strAnio;
     }
 
@@ -35,20 +37,20 @@ function fncCargarGraficosClima(strEstado, strAnio){
         dataType: 'json',
         success: function (data) {
             data.forEach(function(item){
-            if (!sumByState[item.state]) {
-                sumByState[item.state] = {
-                    n_incidents: 0,
-                    average_precipitation: 0,
-                    average_temperature: 0
-                };
-                countByState[item.state] = 0;
-            }
+                if (!sumByState[item.state]) {
+                    sumByState[item.state] = {
+                        n_incidents: 0,
+                        average_precipitation: 0,
+                        average_temperature: 0
+                    };
+                    countByState[item.state] = 0;
+                }
 
-            sumByState[item.state].n_incidents += item.n_incidents;
-            sumByState[item.state].average_precipitation += item.average_precipitation;
-            sumByState[item.state].average_temperature += item.average_temperature;
-            countByState[item.state]++;
-            });
+                sumByState[item.state].n_incidents += item.n_incidents;
+                sumByState[item.state].average_precipitation += item.average_precipitation;
+                sumByState[item.state].average_temperature += item.average_temperature;
+                countByState[item.state]++;
+                });
 
             // Calcular la media por estado
             for (var state in sumByState) {
@@ -72,11 +74,12 @@ function fncCargarGraficosClima(strEstado, strAnio){
  * relacionados con la pobreza                      *
  * **************************************************/
 function fncCargarGraficosPobreza(strEstado, strAnio){
-    strUrlFinal = urlBase+"incidents_population_poverty.json";
-    if(strEstado != ""){
+    strUrlFinal = urlBase+"incidents/population_poverty/";
+    if(strEstado != "" && strAnio != ""){
+        strUrlFinal += "?state="+strEstado+"&year="+strAnio;
+    }else if(strEstado != ""){
         strUrlFinal += "?state="+strEstado;
-    }
-    if(strAnio != ""){
+    }else if(strAnio != ""){
         strUrlFinal += "?year="+strAnio;
     }
 
@@ -123,11 +126,12 @@ function fncCargarGraficosPobreza(strEstado, strAnio){
  * relacionados con el fin de semana                *
  * **************************************************/
 function fncCargarGraficosFindes(strEstado, strAnio){
-    strUrlFinal = urlBase+"incidents_weekend.json";
-    if(strEstado != ""){
+    strUrlFinal = urlBase+"incidents/weekend/";
+    if(strEstado != "" && strAnio != ""){
+        strUrlFinal += "?state="+strEstado+"&year="+strAnio;
+    }else if(strEstado != ""){
         strUrlFinal += "?state="+strEstado;
-    }
-    if(strAnio != ""){
+    }else if(strAnio != ""){
         strUrlFinal += "?year="+strAnio;
     }
 
@@ -191,11 +195,12 @@ function fncCargarGraficosFindes(strEstado, strAnio){
  * relacionados con las leyes                       *
  * **************************************************/
 function fncCargarGraficosLeyes(strEstado, strAnio){
-    strUrlFinal = urlBase+"incidents_firearm_laws.json";
-    if(strEstado != ""){
+    strUrlFinal = urlBase+"incidents/firearm_laws/";
+    if(strEstado != "" && strAnio != ""){
+        strUrlFinal += "?state="+strEstado+"&year="+strAnio;
+    }else if(strEstado != ""){
         strUrlFinal += "?state="+strEstado;
-    }
-    if(strAnio != ""){
+    }else if(strAnio != ""){
         strUrlFinal += "?year="+strAnio;
     }
 
