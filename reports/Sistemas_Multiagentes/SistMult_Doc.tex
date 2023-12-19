@@ -1,0 +1,307 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+%\usepackage{gentium}
+\usepackage{mathptmx} % Use Times Font
+
+
+\usepackage[pdftex]{graphicx} % Required for including pictures
+\usepackage[spanish]{babel} % Spanish translations
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+
+\graphicspath{{./figs/}}
+
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage{xurl}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\usepackage{amsmath}
+\usepackage{yhmath}
+
+%-----------------------
+% Set pdf information and add title, fill in the fields
+%-----------------------
+\hypersetup{ 	
+pdfsubject = {},
+pdftitle = {},
+pdfauthor = {}
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+\begin{document} %All text i dokumentet hamnar mellan dessa taggar, allt ovanför är formatering av dokumentet
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	
+	\center % Centre everything on the page
+	
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+	
+	\textsc{\LARGE Universidad de Castilla-La Mancha}\\[1.5cm] % Main heading such as the name of your university/college
+	
+	\textsc{\Large Laboratorio}\\[0.5cm] % Major heading such as course name
+	
+	\textsc{\large Documentación}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\HRule\\[0.4cm]
+	
+	{\huge\bfseries Sistemas Multiagentes}\\[0.4cm] % Title of your document
+	
+	\HRule\\[1.5cm]
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+
+    \textsc{Laurentiu Gheorghe Zlatar}\\
+    \textsc{Israel Mateos Aparicio Ruiz Santa Quiteria}\\
+    \textsc{Ignacio Rozas López}
+	
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+	%\vfill\vfill
+	%\includegraphics[width=0.2\textwidth]{placeholder.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+
+\tableofcontents
+
+\newpage
+
+\section{Introducción}
+
+El presente documento tiene como fin documentar el desarrollo de la práctica de Sistemas Multiagentes. Esta consiste en montar una base de datos y una API REST para poder realizar peticiones a la misma. Los conjuntos de datos usados son datos de violencia con armas en Estados Unidos, referentes al proyecto de la asignatura de Minería de Datos. Además, debe implementarse una funcionalidad extra. En nuestro caso, esta ha sido un \textit{frontend} para visualizar rápidamente los datos.
+
+\section{Obtención de datos y web scraping}
+
+Los conjuntos de datos para el desarrollo del proyecto son obtenidos con el \textit{script} \lstinline!src/data/get_datasets.py!. Para los \textit{datasets} con un enlace de descarga, simplemente se obtienen mediante una petición GET al enlace. A continuación, entraremos más en detalle en dos conjuntos de datos: el de incidentes de violencia con armas, y el de datos de pobreza. Para el primero hay que hacer uso de la API de Kaggle, mientras que el segundo ha sido obtenido con técnicas de \textit{web scraping}. 
+
+\subsection{Conjunto de incidentes}
+
+El conjunto de incidentes es el \textit{dataset} principal de nuestro proyecto. Como se encuentra alojado en la web de Kaggle y esta cuenta con una API propia, la usaremos para descargarlo automáticamente.
+
+Para ello, necesitamos establecer el módulo \lstinline!kaggle! como requisito de nuestro proyecto. La API de Kaggle nos exige una identificación, por lo que es necesario crear una cuenta en Kaggle y descargar un token identificativo en su página web, que se provee en formato \textit{json}. Para que el \textit{script} pueda leer el token, declaramos una variable de entorno \lstinline!KAGGLE_CONFIG_DIR! con el directorio que el token. Con el fin de securizar la información, esta variable se declara en un fichero \lstinline!.env! que es excluido del repositorio en el fichero \lstinline!.gitignore!. Así, cada persona que use el proyecto debe establecer dónde se encuentra su token, y la información no se filtrará al repositorio remoto. Esta variable de entorno se lee mediante el uso del módulo \lstinline!dotenv!.
+
+\subsection{Conjunto de datos de pobreza}
+
+El conjunto de datos de pobreza no se encuentra en un formato usable, sino que se muestra en \url{https://www.povertyusa.org/data}. La página permite mostrar los datos de pobreza según el estado y el año. En nuestro caso, nos interesan los años del 2015 al 2018 para todos los estados. Por tanto, iremos navegando año por año y estado por estado, recopilando toda la información que nos interese.
+
+En la página web, nos encontramos selectores de estado y año. Cuando se selecciona alguno, nos redirige a un \textit{endpoint} con el código estándar del estado y el año. Por tanto, necesitamos primero estos códigos de estado. En vez de hacer una lista manualmente con todos los códigos de los estados, los obtenemos automáticamente de \url{https://en.wikipedia.org/wiki/ISO_3166-2:US}. Para ello, utilizamos el módulo \textbf{BeautifulSoup}, un \textit{parser} de HTML y XML, ya que la página no carga los datos dinámicamente, sino que se encuentran en el fichero HTML. Obtenemos este fichero mediante una petición GET, y extraemos los datos que nos interesan.
+
+Una vez que tenemos los códigos, pasamos a obtener los datos de pobreza. Estos datos se cargan dinámicamente en la página, por lo que no podemos utilizar directamente \lstinline!BeautifulSoup!. Por tanto, usaremos \textbf{Selenium} para abrir una ventana con el driver de Chrome. Una vez cargados los datos gracias a ello en el HTML, lo obtenemos y lo \textit{parseamos} con \lstinline!BeautifulSoup!.
+
+Una vez recopilados todos los datos, se exportan a un fichero \lstinline!.csv! formando antes un DataFrame con \textbf{Pandas}. Este es creado con el método \lstinline!from_dict! para mayor eficiancia.
+
+\section{Uso de Docker}
+
+Para evitarnos problemas de conflictos y configuraciones de entornos, hemos decidido utilizar \textbf{Docker} como la base de nuestra infraestructura.
+
+Docker es una plataforma de código abierto diseñada para la creación y ejecución de contenedores, que permiten encapsular aplicaciones y dependencias. Los contenedores actúan como una especie de máquina virtual, con la diferencia de que los contenedores Docker comparten el sistema operativo del anfitrión, mientras que las máquinas virtuales también tienen un sistema operativo invitado que se ejecuta sobre el sistema anfitrión. Esto los hace mucho más eficientes y ligeros. Además, ya hay disponibles varias imágenes para crear contenedores con todo tipo de entornos ya configurados para su uso.
+
+Nuestro proyecto necesita de varios servicios y \textit{scripts}, por lo que utilizaremos \textbf{Docker Compose}. Docker Compose permite crear aplicaciones con varios contenedores, y crear una red interna entre ellos. Con un único comando, toda la infraestructura se levanta. Para ello, es necesario definir los servicios en un fichero YAML. A continuación, se detallan los servicios definidos en nuestra aplicación.
+
+\subsection{Servicios}
+
+\subsubsection*{\textit{postgres}}
+
+Necesitaremos almacenar nuestros datos en una base de datos ---su estructura se detallará posteriormente en este documento---. Para ello, hemos decidido utilizar \textbf{PostgreSQL} como sistema de gestión de bases de datos.
+
+Este es el primer servicio en levantarse, montando la base de datos. El puerto desde el que se accede tanto internamente en el contenedor como su mapeo al exterior son definidos en el fichero. Además, se definen valores de la base de datos como su nombre, usuario y contraseña como variables de entorno. Se define un volumen, que mapea un directorio en el contenedor con otro en el anfitrión, con el fin de persistir la información. Esto debe hacerse porque los contenedores de Docker borran su memoria tras la ejecución.
+
+Por último, hemos definido un \textit{healthcheck}, que consiste en probar el comando \lstinline!pg_isready! cada segundo para comprobar cuando la base de datos está lista para recibir conexiones. Esto nos permitirá establecer dependencias con otros servicios, de manera que no comiencen su ejecución sin que la base de datos esté lista (en caso de que la necesiten).
+
+\subsubsection*{\textit{data\_loader}}
+
+La imagen de este contenedor lo hemos creado nosotros mismo, definiéndola a través de un archivo \textit{Dockerfile}, que establece cómo debe Docker crear el contenedor. Este contenedor usa Python 3.9. Partimos de esta imagen, le instalamos las dependencias y copiamos los conjuntos de datos y los \textit{scripts} necesarios del anfitrión al contenedor. Por último, ejecutamos el \textit{script} \lstinline!load_data.py!, que carga los datos a las distintas capas de nuestra base de datos.
+
+En la definición del servicio, establecemos una dependencia con \textit{postgres} de manera que sólo se levante una vez la base de datos esté lista para recibir conexiones. Además, definimos las variables de entorno necesarias para la conexión con la base de datos, y creamos un volumen para \textit{logs}.
+
+\subsubsection*{backend} 
+
+De nuevo, definimos la creación de la imagen con un fichero \textit{Dockerfile}. Partimos de la imagen de Python 3.10 (necesitamos una funcionalidad de esta versión), instalamos las dependencias y ejecutamos el servidor. También establecemos una dependencia con \textit{postgres} de la misma manera que en \textit{data\_loader}. Además, establecemos una dependencia con \textit{data\_loader}, de manera que sólo se levante una vez este se haya ejecutado, para evitar cargar el servidor sin datos a los que acceder.
+
+\subsubsection*{\textit{pgadmin}}
+
+Este contenedor será creado a partir de la imagen oficial de \textit{pgadmin}, una herramienta para gestionar y administrar bases de datos en PostgreSQL. Definimos las variables de entorno necesarias para su acceso, junto con el puerto en el que se encontrará. Establecemos de nuevo una dependencia con \textit{postgres}.
+
+\section{Base de datos}
+
+La base de datos en la que se almacenan nuestros conjuntos de datos se monta con PostgreSQL, como se ha mencionado anteriormente. Su estructura consiste en tres esquemas:
+
+\begin{enumerate}
+    \item \textbf{\textit{raw}}. Contiene los datos crudos, como se obtienen directamente de las fuentes. Cada conjunto de datos se almacena en una tabla.
+    \item \textbf{\textit{silver}}. Contiene los datos preprocesados, i.e. en su estado previo a la creación de nuestras tarjetas de datos finales. Cada conjunto de datos se almacena en una tabla.
+    \item \textbf{\textit{gold}}. Contiene las tarjetas de datos finales que se usan en algoritmos de minería de datos. Cada una de ellas se almacena en una tabla distinta.
+\end{enumerate}
+
+Para crear y poblar estos esquemas, utilizamos el \textit{script} \lstinline!load_data.py!. Este \textit{script} realiza la siguiente secuencia de operaciones:
+
+\begin{enumerate}
+    \item Se conecta con la base de datos.
+    \item Carga los datos crudos en \textit{raw}.
+    \item Preprocesa los datos usando funciones del \textit{script} \lstinline!preprocess_datasets.py! (este no se explicará, por ser objeto de otra asignatura).
+    \item Carga los datos preprocesados en \textit{silver}.
+    \item Crea las tarjetas de datos finales usando funciones del \textit{script} \lstinline!create_processed_tables.py! (también es objeto de otra asignatura).
+    \item Carga las tarjetas de datos en \textit{gold}.
+\end{enumerate}
+
+Algo a destacar de este proceso es cómo se realiza la conexión y las posteriores operaciones con la base de datos. Para esto, utilizamos \textbf{SQLAlchemy}. SQLAlchemy es lo que se conoce como un \textit{Object Relational Mapper}, cuya función es mapear la información en la base de datos con objetos en el lenguaje de programación que se use ---en nuestro caso, Python---. De esta manera, conseguimos una mayor flexibilidad. Las ventajas del uso de SQLAlchemy se ven más claramente en la lógica del \textit{Backend}. Por ejemplo, podemos cargar directamente un DataFrame de Pandas a la base de datos con el uso de una única función \lstinline!to_sql()!.
+
+\section{Backend}
+
+Con el fin de montar una \textbf{API REST} para acceder a los datos de la capa \textit{gold}, hemos desarrollado un servidor que gestiona la conexión con la base de datos y permite gestionar peticiones.
+
+Una API REST es una interfaz de comunicación entre sistemas que usa el protocolo de transferencia de hipertexto HTTP para obtener datos o ejecutar operaciones sobre ellos en distintos formatos, como XML o JSON. Por tanto, permite realizar peticiones POST, GET, PUT y DELETE.
+
+Para montar esta API, hemos decidido utilizar \textbf{FastAPI}, principalmente por su facilidad de uso. FastAPI es un \textit{framework} para crear APIs en Python.
+
+La estructura de nuestro \textit{backend} se detalla a continuación.
+
+\subsection*{\textit{models.py}}
+
+El fichero \lstinline!models.py! contiene los modelos de SQLAlchemy. Para trabajar más fácilmente con la base de datos, se ha creado un modelo por cada tabla de la capa \textit{gold}. Estos modelos definen objetos equivalente a cada una de las tablas, mapeando la información de la base de datos en nuestro código. Este mapeo se consigue heredando nuestras clases de la base declarativa \textit{Base} de nuestra base de datos, que se crea al conectarse con ella. Esta es una clase especial con metadatos y que permite el mapeo de objetos con tablas.
+
+Así, en cada una de estas clases definimos los atributos equivalente a cada uno de las columnas de nuestras tablas. El uso de SQLAlchemy nos permite abstraer la información y olvidarnos de utilizar directamente sentencias SQL. Además, esto nos protege de vulnerabilidades como las inyecciones en SQL.
+
+\subsection*{\textit{schemas/}}
+
+De manera parecida a los modelos de SQLAlchemy, también hacemos uso de modelos en \textbf{Pydantic}, definidos en los ficheros del módulo \lstinline!schemas!. Estos modelos permiten la validación, la serialización y la generación de los esquemas JSON que se utilizarán en las peticiones y respuestas de nuestra API.
+
+Estos modelos se definen de manera muy parecida a las \textit{dataclasses} de Python, definiendo los atributos y sus tipos. Hemos definido tanto un modelo base del que heredan los demás, ya que algunos atributos son compartidos por todas las tablas, como modelos para cada tabla. Además, según la operación serán necesarios unos datos u otros. Por esta razón, estos modelos se dividen según la operación que se vaya a hacer.
+
+\subsection*{\textit{crud/}}
+
+Con el fin de tener un buen nivel de abstracción en nuestro proyecto, hemos decidido crear unas clases que serán las que manejen las operaciones de nuestra API a bajo nivel. Estas se encuentran en los ficheros del módulo \lstinline!crud!.
+
+Como su nombre indica, estas clases se encargan de las operaciones básicas CRUD: Create, Read, Update, Delete. De nuevo, hemos creado una clase base, que generaliza las operaciones sin importar la tabla. Después, para cada una de las tablas se define una clase que hereda de esta. Estas clases contienen operaciones específicas para cada tabla. Por ejemplo, en nuestro caso los datos vienen agrupados por estados y años, por lo que tenemos métodos que leen los registros que coinciden con estados y años determinados.
+
+\subsection*{\textit{api/}}
+
+Los ficheros del módulo \lstinline!api! manejan las operaciones correspondientes a cada \textit{endpoint} de la API. Para cada tabla de la base de datos se ha definido un endpoint mediante la clase \lstinline!APIRouter! de FastAPI. Esta clase se encarga de definir las distintas rutas de nuestro servidor.
+
+Se han definido aquí las operaciones a realizar cuando se le mandan distintas peticiones a los \textit{endpoints}, siendo estas POST, GET, PUT y DELETE, que corresponden a Create, Read, Update y Delete en la base de datos. Por tanto, en cada una de las operaciones y tablas se llama a la clase correspondiente del módulo \lstinline!crud!. De esta manera, conseguimos un alto nivel de abstracción.
+
+Las funciones de estas clases permiten recibir atributos, que pueden o bien ser escritos en el \textit{endpoint} como parámetros de SQL, e.g. \url{/incidents/climate/?state=Alabama}, o como parte del \textit{endpoint} en sí, e.g. \url{/incidents/climate/45}, dependiendo del uso que se le quiera dar. Además de las operaciones básicas por identificador (clave primaria), permitimos la lectura de datos por estado, año o ambas.
+
+\subsection*{\textit{db.py} y \textit{main.py}}
+
+El fichero \lstinline!db.py! se encarga de crear una conexión con la base de datos con las variables de entorno definidas en el contenedor, junto con las distintas sesiones a estas, y permite su obtención mediante la función \lstinline!get_db()!. Es en este fichero en el que se forma la base declarativa de la que hacen uso los modelos de SQLAlchemy.
+
+Finalmente, el fichero \lstinline!main.py! es el fichero que se ejecuta al levantar nuestro servidor. En este fichero, se define la aplicación de FastAPI en sí, junto con las rutas a cada \textit{endpoint} y el \textit{middleware} de CORS. Este último es un \textit{middleware} que implementa la especificación CORS, y que se utiliza cuando un \textit{frontend} hace uso del servidor. En este se permiten todos los orígenes y operaciones.
+
+\section{Frontend}
+
+Como funcionalidad original al desarrollo de la práctica, se ha desarrollado un \textit{frontend} que permite ver gráficos acerca de los datos.
+
+El frontend consiste en una aplicación web básica mediante el uso de ficheros HTML, CSS y JavaScript. El fichero HTML presenta el marco de la aplicación web, estilizado mediante el fichero CSS. El código en JavaScript contiene las funciones para hacer cálculos con los datos y rellenar los gráficos.
+
+La funcionalidad del \textit{frontend}, por tanto, se concentra en el código en JavaScript. En este, se crean \textit{arrays} para cada una de las variables de las tablas. El \textit{frontend} realiza peticiones al \textit{backend} para obtener los datos, y los almacena en estos \textit{arrays}. Una vez recogidos estos datos, implementa en las funciones el cálculo de la media cuando corresponde. Finalmente, genera gráficos de barras usando la librería \textbf{Chart.js}, que proporciona distintas opciones de visualización de datos.
+
+El \textit{frontend} se ha diseñado así buscando la simplicidad y efectividad. De una manera muy visual, conseguimos aportar una visión global de los datos. Simplificando la interfaz al máximo, conseguimos centrarnos en lo importante.
+
+\section{Otras funcionalidades}
+
+En esta sección se incluyen funcionalidades o buenas prácticas seguidas en nuestro proyecto, que creemos que proporcionan ventajas no expuestas anteriormente.
+
+\subsection{Uso de \textit{logs}}
+
+En los distintos \textit{scripts} de nuestro proyecto hemos utilizado el módulo \lstinline!logging! de Python para registrar el proceso que siguen. Durante el desarrollo de una aplicación, es muy importante conocer su estado en cada momento, tanto para hacer \textit{debug} de fallos como para comprobar su correcto funcionamiento. Por tanto, registramos cada paso en un \textit{log}, que se imprime tanto a la consola como a un fichero. Este fichero contiene una marca de fecha y momento exactos en su nombre para diferenciarlos. Gracias a guardar estos ficheros, se pueden comprobar posteriormente detalles a depurar.
+
+\subsection{Código limpio}
+
+Una de las características más importantes y comúnmente olvidadadas de una buena aplicación es la mantenibilidad del código. Para ello, durante el desarrollo de nuestro proyecto hemos incluido:
+
+\begin{itemize}
+    \item Uso de estándares de nombrado de variables, así como nombres representativos.
+    \item Uso de \textit{type-checking} en cada método.
+    \item Uso de \textit{docstrings} en cada método.
+    \item Uso de comentarios sólo donde lo consideramos estrictamente necesario.
+    \item Uso de los \textit{formateadores} \lstinline!black! e \lstinline!isort! para un código con buenas prácticas de estilo.
+\end{itemize}
+
+\subsection{Mantenimiento del repositorio remoto}
+
+De igual manera que con la limpieza del código, es importante seguir un control de versiones adecuado y mantenerlo en un repositorio remoto. Hemos alojado nuestro proyecto en GitHub, y hemos hecho uso de lo siguiente:
+
+\begin{itemize}
+    \item Uso de \textit{issues} para establecer cada tarea a realizar.
+    \item Creación de una nueva rama por cada funcionalidad a implementar o fallo a resolver.
+    \item Uso de palabras clave en \textit{commits} y \textit{pull requests} para cerrar automáticamente sus \textit{issues} asociados.
+    \item Establecimiento de nombres a seguir en cada rama, con el fin de formar una convención interna. Este nombre es ``tipo de \textit{issue} al que esta asociado''/issue-``número de \textit{issue} al que está asociado''/``nombre representativo'', siendo ejemplos de tipo de \textit{issue} \textit{feature}, \textit{bugfix}...
+\end{itemize}
+
+\end{document}
