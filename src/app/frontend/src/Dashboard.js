@@ -13,18 +13,34 @@ const Dashboard = () => {
 
     return (
         <div>
-            <div>
-                <button onClick={() => handleTabChange('climate')}>
-                    Clima
+            <div className='w3-bar w3-black'>
+                <button
+                className={`w3-bar-item w3-button tablink ${activeTab === 'climate' ? 'w3-red' : ''}`}
+                onClick={() => handleTabChange('climate')}
+                id='climate-tablink'
+                >
+                Clima
                 </button>
-                <button onClick={() => handleTabChange('firearmLaws')}>
-                    Leyes
+                <button
+                className={`w3-bar-item w3-button tablink ${activeTab === 'firearmLaws' ? 'w3-red' : ''}`}
+                onClick={() => handleTabChange('firearmLaws')}
+                id='firearmLaws-tablink'
+                >
+                Leyes
                 </button>
-                <button onClick={() => handleTabChange('poverty')}>
-                    Pobreza
+                <button
+                className={`w3-bar-item w3-button tablink ${activeTab === 'poverty' ? 'w3-red' : ''}`}
+                onClick={() => handleTabChange('poverty')}
+                id='poverty-tablink'
+                >
+                Pobreza
                 </button>
-                <button onClick={() => handleTabChange('weekend')}>
-                    Fin de semana
+                <button
+                className={`w3-bar-item w3-button tablink ${activeTab === 'weekend' ? 'w3-red' : ''}`}
+                onClick={() => handleTabChange('weekend')}
+                id='weekend-tablink'
+                >
+                Fin de semana
                 </button>
             </div>
 
