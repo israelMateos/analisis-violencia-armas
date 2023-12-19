@@ -72,7 +72,7 @@ const PovertyVisualization = () => {
                 labels: labels,
                 datasets: [
                     {
-                        label: 'Number of Incidents',
+                        label: 'Número de incidentes / 100.000 habitantes',
                         data: nIncidents,
                         yAxisID: 'incidents',
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -80,7 +80,7 @@ const PovertyVisualization = () => {
                         borderWidth: 1,
                     },
                     {
-                        label: 'Poverty Rate',
+                        label: 'Tasa de pobreza',
                         data: povertyRates,
                         yAxisID: 'poverty',
                         backgroundColor: 'rgba(255, 99, 132, 0.2)',

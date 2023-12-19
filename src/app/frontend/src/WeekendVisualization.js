@@ -77,7 +77,7 @@ const PovertyVisualization = () => {
                 labels: labels,
                 datasets: [
                     {
-                        label: 'Incidentes / 100,000 habitantes y día en día de semana',
+                        label: 'Incidentes / 100.000 habitantes y día en día de semana',
                         data: nIncidentsNoWeekend,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
@@ -85,7 +85,7 @@ const PovertyVisualization = () => {
                         order: 1,
                     },
                     {
-                        label: 'Incidentes / 100,000 habitantes y día en fin de semana',
+                        label: 'Incidentes / 100.000 habitantes y día en fin de semana',
                         data: nIncidentsWeekend,
                         backgroundColor: 'rgba(255, 99, 132, 0.2)',
                         borderColor: 'rgba(255, 99, 132, 1)',
@@ -106,7 +106,7 @@ const PovertyVisualization = () => {
 
     return (
         <div>
-            <h1>Pobreza</h1>
+            <h1>Fines de semana</h1>
 
             <label htmlFor="state">Estado:</label>
             <select
