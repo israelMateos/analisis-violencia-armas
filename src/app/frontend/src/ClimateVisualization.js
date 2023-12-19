@@ -104,7 +104,7 @@ const ClimateVisualization = () => {
                 datasets: [
                     {
                         type: 'line',
-                        label: 'Número de incidentes / 100,000 habitantes',
+                        label: 'Número de incidentes / 100.000 habitantes',
                         data: nIncidents,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
