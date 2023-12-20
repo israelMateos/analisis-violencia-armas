@@ -1,11 +1,21 @@
-FROM nginx:alpine
+FROM node:alpine3.18
 
-WORKDIR /usr/share/nginx/html
+ARG BACKEND_HOST
+ARG BACKEND_PORT
 
-COPY src/app/frontend/index.html .
-COPY src/app/frontend/cargarGraficos.js .
-COPY src/app/frontend/estilos/estilos.css ./estilos/
+ENV BACKEND_HOST=${BACKEND_HOST}
+ENV BACKEND_PORT=${BACKEND_PORT}
 
-EXPOSE 80
+WORKDIR /usr/src/app
 
-CMD ["nginx", "-g", "daemon off;"]
+COPY src/app/frontend/package.json src/app/frontend/yarn.lock ./
+
+RUN yarn install
+
+COPY src/app/frontend .
+
+RUN yarn build
+
+EXPOSE 3000
+
+CMD ["yarn", "start"]

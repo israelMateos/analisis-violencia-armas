@@ -24,7 +24,8 @@ const ClimateVisualization = () => {
 
     const fetchData = async () => {
         try {
-            let endpoint = 'http://172.25.0.3:8000/incidents/climate/'
+            let endpoint = `http://localhost:8000/incidents/climate/`
+            console.log('Backend Host:', process.env.BACKEND_HOST);
             const params = {}
 
             if (selectedState) {

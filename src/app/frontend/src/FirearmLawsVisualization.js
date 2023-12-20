@@ -24,7 +24,7 @@ const FirearmLawsVisualization = () => {
 
     const fetchData = async () => {
         try {
-            let endpoint = 'http://172.25.0.3:8000/incidents/firearm_laws/'
+            let endpoint = 'http://localhost:8000/incidents/firearm_laws/'
             const params = {}
 
             if (selectedState) {

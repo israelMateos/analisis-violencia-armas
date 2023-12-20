@@ -25,7 +25,7 @@ const PovertyVisualization = () => {
     const fetchData = async () => {
         try {
             let endpoint =
-                'http://172.25.0.3:8000/incidents/population_poverty/'
+                'http://localhost:8000/incidents/population_poverty/'
             const params = {}
 
             if (selectedState) {
